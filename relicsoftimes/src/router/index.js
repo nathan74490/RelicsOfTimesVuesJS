@@ -23,7 +23,7 @@ const router = createRouter({
       // route level code-splitting
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      component: () => import('../components/contact.vue'),
+      component: () => import('../views/contact.vue'),
     },
     {
       path: '/profil',
@@ -31,7 +31,7 @@ const router = createRouter({
       // route level code-splitting
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      component: () => import('../components/profil.vue'),
+      component: () => import('../views/profil.vue'),
     },
     {
       path: '/shoppingcart',
@@ -39,7 +39,23 @@ const router = createRouter({
       // route level code-splitting
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      component: () => import('../components/ShoppingCart.vue'),
+      component: () => import('../views/ShoppingCart.vue'),
+    },
+    {
+      path: '/play',
+      name: 'play',
+      // route level code-splitting
+      // this generates a separate chunk (About.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () => import('../views/play.vue'),
+    },
+    {
+      path: '/testplay',
+      name: 'testplay',
+      // route level code-splitting
+      // this generates a separate chunk (About.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () => import('../views/testPlay.vue'),
     },
   ],
 })

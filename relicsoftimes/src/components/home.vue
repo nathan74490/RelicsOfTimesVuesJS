@@ -1,7 +1,12 @@
+<script setup>
+import { RouterLink, RouterView } from 'vue-router'
+
+</script>
 <template>
     <section id="home">
-        <h1>RELICS OF TIMES</h1>
-        <a href="doYouWantToPlay.html"><button id="buttonTest">test du jeu</button></a>
+        <h1 id="title">RELICS OF TIMES</h1>
+        <RouterLink to="/play" id="buttonTest">test du jeu</RouterLink>
+        <!-- <a href="doYouWantToPlay.html"></a> -->
         <img id="flecheBasPageAcce" src="../assets/flecheBasPageAcce.svg"
             alt="Flèche indiquant un scrolle possible vers le bas">
     </section>
@@ -20,7 +25,7 @@
         width: 100vw;
         background-color: #999494;
     }
-    h1 {
+    #title {
         font-size: 128px;
         color: #fff;
     }
