@@ -1,0 +1,45 @@
+{
+    "dessins_animes": [
+      {
+        "nom": "Les Razmoket",
+        "image": "https://upload.wikimedia.org/wikipedia/en/0/0d/Rugrats_cast.png"
+      },
+      {
+        "nom": "Hé Arnold !",
+        "image": "https://upload.wikimedia.org/wikipedia/en/8/89/Hey_Arnold%21_title_card.png"
+      },
+      {
+        "nom": "Les Supers Nanas",
+        "image": "https://upload.wikimedia.org/wikipedia/en/f/f4/The_Powerpuff_Girls_1998_title_card.png"
+      },
+      {
+        "nom": "Code Lyoko",
+        "image": "https://upload.wikimedia.org/wikipedia/en/f/fb/Code_Lyoko_logo.png"
+      },
+      {
+        "nom": "Ed, Edd & Eddy",
+        "image": "https://upload.wikimedia.org/wikipedia/en/e/e3/Ed%2C_Edd_n_Eddy_title_card.jpg"
+      },
+      {
+        "nom": "Les Animaniacs",
+        "image": "https://upload.wikimedia.org/wikipedia/en/5/5f/Animaniacs_-_Characters.png"
+      },
+      {
+        "nom": "Oggy et les Cafards",
+        "image": "https://upload.wikimedia.org/wikipedia/en/5/56/Oggy_and_the_Cockroaches_title_card.png"
+      },
+      {
+        "nom": "Totally Spies!",
+        "image": "https://upload.wikimedia.org/wikipedia/en/7/77/Totally_Spies%21_Logo.png"
+      },
+      {
+        "nom": "Les Aventures de Tintin",
+        "image": "https://upload.wikimedia.org/wikipedia/en/4/45/Adventures_of_Tintin_title_card.png"
+      },
+      {
+        "nom": "Dragon Ball Z",
+        "image": "https://upload.wikimedia.org/wikipedia/en/0/01/Dragon_Ball_Z_logo.png"
+      }
+    ]
+  }
+  
