@@ -53,8 +53,22 @@
   async function getResponse() {
     response.value = 'Chargement...'
   
-    const prompt = `Peux-tu me dire si les mots suivants correspondent bien au dessin animé ${randomDessin.nom} ? Pour chaque mot qui correspond, ajoute 10 points. Mots : ${champ1.value}, ${champ2.value}, ${champ3.value}, ${champ4.value}`
-  
+    const prompt = `Tu es un expert en animation et en analyse sémantique.
+Je vais te donner :
+
+Le titre d’un dessin animé
+
+Une liste de mots-clés en français
+
+Ta mission est de me dire pour chaque mot s’il est pertinent (lié de manière évidente ou directe au dessin animé, par son univers, ses personnages, ses thèmes, etc.).
+Si le mot est pertinent, il rapporte 10 points, sinon 0 point.
+Donne-moi pour chaque mot une réponse structurée ainsi :
+Mot : [mot] – Pertinent : [Oui / Non] – Points : [0 ou 10] – Justification : [courte explication]
+
+Voici les données :
+Titre du dessin animé : ${randomDessin.value.nom} 
+Mots à analyser : [ ${champ1.value}, ${champ2.value}, ${champ3.value}, ${champ4.value}]`
+                  
     try {
       response.value = await sendPrompt(prompt)
     } catch (e) {

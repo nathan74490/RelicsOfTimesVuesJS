@@ -17,16 +17,20 @@ import { RouterLink, RouterView } from 'vue-router'
     <header>
         <ul>
             <li>
-                <RouterLink to="/">
-                    <a>Relics Of Times</a>
-                </RouterLink>
+                
                 <!-- <a href="index.html"></a> -->
-                 <RouterLink to="/contact"><a>Contact</a></RouterLink>
+                 <RouterLink to="/contact"><a>A propos</a></RouterLink>
+                 <RouterLink to="/contact"><a>Personnaliser</a></RouterLink>
+                 
                 <!-- <a href="contact.html">Contact</a> -->
             </li>
+            <RouterLink to="/">
+                    <img src="../assets/logoRT.svg" alt="">
+                </RouterLink>
+            <div></div>
             <li >
-                <RouterLink to="/profil"><img class="svgHeader" src="../assets/PersonIcon.svg" alt=""></RouterLink>
-                <RouterLink to="/shoppingcart"><img class="svgHeader" src="../assets/ShoppingCartIcon.svg" alt=""></RouterLink>
+                <RouterLink to="/profil"><img class="svgHeader" src="../assets/profil.svg" alt=""></RouterLink>
+                <RouterLink to="/shoppingcart"><img class="svgHeader" src="../assets/panier.svg" alt=""></RouterLink>
                 
             </li>
         </ul>
@@ -38,6 +42,7 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
 }
+
 
 li {
     list-style-type: none;
@@ -51,12 +56,13 @@ li {
 ul {
     list-style-type: none;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     flex-direction: row;
+    /* max-height: 109px; */
     width: 100%;
     overflow: hidden;
-    border-bottom: black solid 1px;
+    /* border-bottom: black solid 1px; */
     padding: 8px;
     margin: 0;
 }
@@ -64,16 +70,18 @@ ul {
 a {
     text-decoration: none;
     font-size: 36px;
-    color: black;
+    color: white;
 }
 
 header {
     display: flex;
     position: sticky;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     gap: 1rem;
     width: 100%;
+    background-color: black;
+    max-height: 109px;
 }
 .settings{
     display: flex;
