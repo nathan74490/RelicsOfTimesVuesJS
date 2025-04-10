@@ -1,7 +1,7 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
 import HelloWorld from './components/HelloWorld.vue'
-import theHeader from './views/header.vue'
+import theHeader from '../src/header.vue'
 import HomeView from './views/HomeView.vue'
 
 </script>
