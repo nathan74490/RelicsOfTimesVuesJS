@@ -23,7 +23,7 @@
           <input v-model="champ4" class="champ-texte" placeholder="Pose une question..." />
         </div>
         <!-- <button @click="getRandomDessin">Nouveau dessin aléatoire</button> -->
-        <button id="buttonPersonalise" style="width: 20%;" @click="getResponse">Confirmer</button>
+        <button class="buttonPersonalise" style="width: 20%;" @click="getResponse">Confirmer</button>
       </div>
     </div>
 
