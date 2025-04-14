@@ -4,9 +4,10 @@ import { RouterLink, RouterView } from 'vue-router'
 </script>
 <template>
     <section id="home">
+      <img id="card1" src="../assets/cards1.png" alt="Cartes du jeu Relics Of Times" />
       <div class="container">
           <h1 id="title">Relics Of Times</h1>
-          <img id="card1" src="../assets/cards1.png" alt="Cartes du jeu Relics Of Times" />
+
       </div>
 
 <!--        <RouterLink to="/play" id="buttonTest">test du jeu</RouterLink>-->
@@ -16,10 +17,13 @@ import { RouterLink, RouterView } from 'vue-router'
     </section>
     <section id="productDescription">
         <img id="card2" src="../assets/cards2.png" alt="Cartes du jeu Relics Of Times" />
-        <p id="textDesc">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+        <div id="divDesc">
+          <p id="textDesc">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+          <RouterLink id="buttonPersonalise" to="#">Personnaliser</RouterLink>
+        </div>
     </section>
 </template>
 
@@ -52,7 +56,6 @@ import { RouterLink, RouterView } from 'vue-router'
     }
 
     #card1 {
-      right: 0;
       height: 100%;
       width: 100%;
     }
@@ -62,13 +65,40 @@ import { RouterLink, RouterView } from 'vue-router'
       width: 100%;
     }
 
-    #textDesc {
+    #divDesc {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-end;
       position: absolute;
+      gap: 1vh;
       right: 5vw;
       font-size: 24px;
       text-align: right;
       width: 25vw;
       color: #fff;
+    }
+
+    #buttonPersonalise {
+      background-color: #000000;
+      color: #fff;
+      font-size: 18px;
+      text-align: center;
+      border-radius: 50px;
+      border: 2px solid white;
+      padding: 8px;
+      width: 55%;
+    }
+
+    #buttonPersonalise:hover {
+      background-color: #ffffff;
+      color: #009CD4;
+    }
+
+    #buttonPersonalise:active {
+      background-color: #009CD4;
+      border: 2px solid #009CD4;
+      color: #ffffff;
     }
 
     #buttonTest {
