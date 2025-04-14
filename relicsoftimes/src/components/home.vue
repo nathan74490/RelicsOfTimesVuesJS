@@ -8,8 +8,6 @@ import { RouterLink, RouterView } from 'vue-router'
       <h1 id="title">Relics Of Times</h1>
 <!--       <RouterLink to="/play" id="buttonTest">test du jeu</RouterLink>-->
         <!-- <a href="doYouWantToPlay.html"></a> -->
-        <img id="flecheBasPageAcce" src="../assets/flecheBasPageAcce.svg"
-            alt="Flèche indiquant un scrolle possible vers le bas">
     </section>
     <section id="productPersonalise">
         <img id="card2" src="../assets/cards2.png" alt="Cartes du jeu Relics Of Times" />
@@ -143,7 +141,7 @@ import { RouterLink, RouterView } from 'vue-router'
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        height: 100vh;
+        height: 50vh;
         width: 100vw;
         background-color: #131313;
       }
