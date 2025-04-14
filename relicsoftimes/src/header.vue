@@ -81,7 +81,7 @@ header {
     gap: 1rem;
     width: 100%;
     background-color: black;
-    max-height: 109px;
+    max-height: 10.9vh;
 }
 .settings{
     display: flex;

@@ -9,7 +9,7 @@ import { RouterLink, RouterView } from 'vue-router'
           <img id="card1" src="../assets/cards1.png" alt="Cartes du jeu Relics Of Times" />
       </div>
 
-<!--        <RouterLink to="/play" id="buttonTest">test du jeu</RouterLink>-->
+       <RouterLink to="/play" id="buttonTest">test du jeu</RouterLink>
         <!-- <a href="doYouWantToPlay.html"></a> -->
         <img id="flecheBasPageAcce" src="../assets/flecheBasPageAcce.svg"
             alt="Flèche indiquant un scrolle possible vers le bas">
