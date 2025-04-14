@@ -7,12 +7,13 @@ h1{
 } */
 .buttonPersonalise {
   background-color: #000000;
+  border: 1px solid white;
   color: #fff;
-  font-size: 18px;
+  padding: 10px;
+  border-radius: 20px;
+  font-size: 1rem;
   text-align: center;
-  border-radius: 50px;
-  border: 2px solid white;
-  padding: 8px;
+  transition: background 0.3s ease, color 0.3s ease; 
   /* width: 55%; */
 }
 

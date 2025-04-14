@@ -1,3 +1,6 @@
+<script setup>
+    import userProfil from '@/components/login.vue';
+</script>
 <template>
-    <h1>page profile</h1>
+    <userProfil/>
 </template>
