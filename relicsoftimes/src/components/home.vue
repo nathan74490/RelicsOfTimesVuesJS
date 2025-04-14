@@ -4,10 +4,9 @@ import { RouterLink, RouterView } from 'vue-router'
 </script>
 <template>
     <section id="home">
-      <img id="card1" src="../assets/cards1.png" alt="Cartes du jeu Relics Of Times" />
       <div class="container">
           <h1 id="title">Relics Of Times</h1>
-
+          <img id="card1" src="../assets/cards1.png" alt="Cartes du jeu Relics Of Times" />
       </div>
 
        <RouterLink to="/play" id="buttonTest">test du jeu</RouterLink>
@@ -56,6 +55,7 @@ import { RouterLink, RouterView } from 'vue-router'
     }
 
     #card1 {
+      right: 0;
       height: 100%;
       width: 100%;
     }
