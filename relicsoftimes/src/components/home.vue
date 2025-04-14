@@ -4,17 +4,14 @@ import { RouterLink, RouterView } from 'vue-router'
 </script>
 <template>
     <section id="home">
-      <div class="container">
-          <h1 id="title">Relics Of Times</h1>
-          <img id="card1" src="../assets/cards1.png" alt="Cartes du jeu Relics Of Times" />
-      </div>
-
-       <RouterLink to="/play" id="buttonTest">test du jeu</RouterLink>
+      <img id="card1" src="../assets/cards1.png" alt="Cartes du jeu Relics Of Times" />
+      <h1 id="title">Relics Of Times</h1>
+<!--       <RouterLink to="/play" id="buttonTest">test du jeu</RouterLink>-->
         <!-- <a href="doYouWantToPlay.html"></a> -->
         <img id="flecheBasPageAcce" src="../assets/flecheBasPageAcce.svg"
             alt="Flèche indiquant un scrolle possible vers le bas">
     </section>
-    <section id="productDescription">
+    <section id="productPersonalise">
         <img id="card2" src="../assets/cards2.png" alt="Cartes du jeu Relics Of Times" />
         <div id="divDesc">
           <p id="textDesc">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
@@ -23,6 +20,9 @@ import { RouterLink, RouterView } from 'vue-router'
             Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
           <RouterLink id="buttonPersonalise" to="#">Personnaliser</RouterLink>
         </div>
+    </section>
+    <section id="">
+
     </section>
 </template>
 
@@ -37,14 +37,6 @@ import { RouterLink, RouterView } from 'vue-router'
       background-color: #131313;
     }
 
-    .container {
-      display: flex;
-      flex-direction: row;
-      justify-content: flex-end;
-      align-items: center;
-      width: 100vw;
-    }
-
     #title {
       position: absolute;
       z-index: 99;
@@ -55,7 +47,6 @@ import { RouterLink, RouterView } from 'vue-router'
     }
 
     #card1 {
-      right: 0;
       height: 100%;
       width: 100%;
     }
@@ -121,7 +112,7 @@ import { RouterLink, RouterView } from 'vue-router'
         height: 55px;
         
     }
-    #productDescription{
+    #productPersonalise{
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -129,16 +120,5 @@ import { RouterLink, RouterView } from 'vue-router'
         height: 100vh;
         width: 100vw;
         background-color: #000000;
-    }
-
-    @media screen and (max-width: 1500px) {
-      .container {
-        justify-content: center;
-        align-items: center;
-      }
-      #card1 {
-        height: 100%;
-        width: 100%;
-      }
     }
 </style>
