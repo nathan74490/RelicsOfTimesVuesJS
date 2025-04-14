@@ -16,8 +16,9 @@
             <p>&copy; 2023 Relics of Times. Tous droits réservés.</p>
             <div class="footer-links">
                     <!-- <a href="#">Mentions légales</a> -->
-                    <a href="#"><img src="./assets/logoinsta.svg" alt=""></a>
-                    <a href="#"><img src="./assets/logo_X.svg" alt=""></a>
+                <a href="#"><img src="./assets/logoinsta.svg" alt=""></a>
+                <div></div>
+                <a href="#"><img src="./assets/logo_X.svg" alt=""></a>
             </div>
         </div>
     </footer>
@@ -35,8 +36,18 @@ footer {
 .footer-container{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     padding: 0 20px;
+}
+.footer-links{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 10vw;
+}
+p {
+    margin: 0;
+    font-size: 24px;
 }
 </style>
