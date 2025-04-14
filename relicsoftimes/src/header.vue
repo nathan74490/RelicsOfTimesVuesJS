@@ -19,8 +19,8 @@ import { RouterLink, RouterView } from 'vue-router'
             <li>
                 
                 <!-- <a href="index.html"></a> -->
-                 <RouterLink to="/contact"><a>A propos</a></RouterLink>
-                 <RouterLink to="/contact"><a>Personnaliser</a></RouterLink>
+                 <RouterLink to="/A_Propos"><a>A propos</a></RouterLink>
+                 <RouterLink to="/Personaliser"><a>Personnaliser</a></RouterLink>
                  
                 <!-- <a href="contact.html">Contact</a> -->
             </li>

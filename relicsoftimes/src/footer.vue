@@ -1,0 +1,42 @@
+<template>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-contact">
+                    <h3>Contact:</h3>
+                    <a href="tel:+33772203515">
+                        <p>0772203515</p>
+                    </a>
+                    <a href="mailto:relicsoftimes@gmail.com">
+                        <p>relicsoftimes@gmail.com</p>
+                    </a>
+                </div>
+                
+            </div>
+            <p>&copy; 2023 Relics of Times. Tous droits réservés.</p>
+            <div class="footer-links">
+                    <!-- <a href="#">Mentions légales</a> -->
+                    <a href="#"><img src="./assets/logoinsta.svg" alt=""></a>
+                    <a href="#"><img src="./assets/logo_X.svg" alt=""></a>
+            </div>
+        </div>
+    </footer>
+</template>
+
+<style>
+footer {
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+    position: sticky;
+    bottom: 0;
+    width: 100%;
+}
+.footer-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+</style>

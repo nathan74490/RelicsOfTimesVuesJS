@@ -26,6 +26,22 @@ const router = createRouter({
       component: () => import('../views/contact.vue'),
     },
     {
+      path: '/A_Propos',
+      name: 'A_Propos',
+      // route level code-splitting
+      // this generates a separate chunk (About.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () => import('../views/aPropos.vue'),
+    },
+    {
+      path: '/Personnaliser',
+      name: 'Personnaliser',
+      // route level code-splitting
+      // this generates a separate chunk (About.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () => import('../views/personaliser.vue'),
+    },
+    {
       path: '/profil',
       name: 'profil',
       // route level code-splitting

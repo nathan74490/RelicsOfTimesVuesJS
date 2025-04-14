@@ -2,6 +2,7 @@
 import { RouterLink, RouterView } from 'vue-router'
 import HelloWorld from './components/HelloWorld.vue'
 import theHeader from '../src/header.vue'
+import thefooter from '../src/footer.vue'
 import HomeView from './views/HomeView.vue'
 
 </script>
@@ -9,7 +10,10 @@ import HomeView from './views/HomeView.vue'
 <template>
   <body>
     <theHeader />
-    <RouterView/>
+    <div id="containt">
+      <RouterView/>
+    </div>
+    
 
 
 
@@ -18,13 +22,17 @@ import HomeView from './views/HomeView.vue'
 
 
 
-
+    <thefooter />
   </body>
+
     <!-- <RouterView /> -->
 </template>
 
 <style scoped>
 body{
   overflow-x: hidden;
+}
+#containt{
+  min-height: 90vh;
 }
 </style>
