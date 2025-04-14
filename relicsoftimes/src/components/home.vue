@@ -75,7 +75,7 @@ import { RouterLink, RouterView } from 'vue-router'
       gap: 1vh;
       right: 5vw;
       font-size: 24px;
-      text-align: right;
+      text-align: justify;
       width: 25vw;
       color: #fff;
     }
@@ -89,7 +89,7 @@ import { RouterLink, RouterView } from 'vue-router'
       gap: 1vh;
       left: 5vw;
       font-size: 24px;
-      text-align: right;
+      text-align: justify;
       width: 25vw;
       color: #fff;
     }
@@ -157,6 +157,7 @@ import { RouterLink, RouterView } from 'vue-router'
 
       #textDesc {
         font-size: 3vw;
+        text-align: justify-all;
       }
 
       #card1 {
@@ -180,9 +181,9 @@ import { RouterLink, RouterView } from 'vue-router'
         justify-content: center;
         align-items: flex-end;
         position: absolute;
+        text-align: justify-all;
         gap: 1vh;
         right: 5vw;
-        text-align: right;
         width: 30vw;
         color: #fff;
       }
@@ -195,13 +196,14 @@ import { RouterLink, RouterView } from 'vue-router'
         position: absolute;
         gap: 1vh;
         left: 5vw;
-        text-align: right;
+        text-align: justify;
         width: 30vw;
         color: #fff;
       }
 
       #textAbout {
         font-size: 3vw;
+        text-align: justify-all;
       }
 
       .buttonPersonalise {
@@ -233,6 +235,7 @@ import { RouterLink, RouterView } from 'vue-router'
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        text-align: justify;
         height: 45vh;
         width: 100vw;
         background-color: #000000;
@@ -243,6 +246,7 @@ import { RouterLink, RouterView } from 'vue-router'
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        text-align: justify;
         height: 45vh;
         width: 100vw;
         background-color: #000000;
