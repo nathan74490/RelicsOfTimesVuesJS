@@ -5,24 +5,30 @@ import { RouterLink, RouterView } from 'vue-router'
 <template>
     <section id="home">
       <img id="card1" src="../assets/cards1.png" alt="Cartes du jeu Relics Of Times" />
-      <div class="container">
-          <h1 id="title">Relics Of Times</h1>
-
-      </div>
-
-       <RouterLink to="/play" id="buttonTest">test du jeu</RouterLink>
+      <h1 id="title">Relics Of Times</h1>
+<!--       <RouterLink to="/play" id="buttonTest">test du jeu</RouterLink>-->
         <!-- <a href="doYouWantToPlay.html"></a> -->
         <img id="flecheBasPageAcce" src="../assets/flecheBasPageAcce.svg"
             alt="Flèche indiquant un scrolle possible vers le bas">
     </section>
-    <section id="productDescription">
+    <section id="productPersonalise">
         <img id="card2" src="../assets/cards2.png" alt="Cartes du jeu Relics Of Times" />
         <div id="divDesc">
           <p id="textDesc">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
             sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
             Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
             Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-          <RouterLink id="buttonPersonalise" to="#">Personnaliser</RouterLink>
+          <RouterLink class="buttonPersonalise" style="width: 55%;" to="#">Personnaliser</RouterLink>
+        </div>
+    </section>
+    <section id="about">
+        <img id="card3" src="../assets/cards3.png" alt="Cartes du jeu Relics Of Times" />
+        <div id="divAbout">
+          <p id="textAbout">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+          <RouterLink class="buttonPersonalise" style="width: 55%;" to="#">Tester le jeu</RouterLink>
         </div>
     </section>
 </template>
@@ -38,18 +44,10 @@ import { RouterLink, RouterView } from 'vue-router'
       background-color: #131313;
     }
 
-    .container {
-      display: flex;
-      flex-direction: row;
-      justify-content: flex-end;
-      align-items: center;
-      width: 100vw;
-    }
-
     #title {
       position: absolute;
       z-index: 99;
-      font-size: 96px;
+      font-size: 5vw;
       color: #fff;
       white-space: nowrap;
       left: 5vw;
@@ -61,6 +59,11 @@ import { RouterLink, RouterView } from 'vue-router'
     }
 
     #card2 {
+      height: 100%;
+      width: 100%;
+    }
+
+    #card3 {
       height: 100%;
       width: 100%;
     }
@@ -79,7 +82,20 @@ import { RouterLink, RouterView } from 'vue-router'
       color: #fff;
     }
 
-    
+    #divAbout {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-end;
+      position: absolute;
+      gap: 1vh;
+      left: 5vw;
+      font-size: 24px;
+      text-align: right;
+      width: 25vw;
+      color: #fff;
+    }
+   
 
     #buttonTest {
         margin-top: 20px;
@@ -101,7 +117,7 @@ import { RouterLink, RouterView } from 'vue-router'
         height: 55px;
         
     }
-    #productDescription{
+    #productPersonalise{
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -111,14 +127,13 @@ import { RouterLink, RouterView } from 'vue-router'
         background-color: #000000;
     }
 
-    @media screen and (max-width: 1500px) {
-      .container {
-        justify-content: center;
-        align-items: center;
-      }
-      #card1 {
-        height: 100%;
-        width: 100%;
-      }
+    #about {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      width: 100vw;
+      background-color: #000000;
     }
 </style>
