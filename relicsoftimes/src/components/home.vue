@@ -136,4 +136,129 @@ import { RouterLink, RouterView } from 'vue-router'
       width: 100vw;
       background-color: #000000;
     }
+
+    @media screen and (max-width: 800px) {
+      #home {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        width: 100vw;
+        background-color: #131313;
+      }
+
+      #title {
+        position: absolute;
+        z-index: 99;
+        font-size: 5vw;
+        color: #fff;
+        white-space: nowrap;
+        left: 5vw;
+      }
+
+      #card1 {
+        height: 100%;
+        width: 100%;
+      }
+
+      #card2 {
+        height: 100%;
+        width: 100%;
+      }
+
+      #card3 {
+        height: 100%;
+        width: 100%;
+      }
+
+      #divDesc {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-end;
+        position: absolute;
+        gap: 1vh;
+        right: 5vw;
+        font-size: 24px;
+        text-align: right;
+        width: 25vw;
+        color: #fff;
+      }
+
+      #divAbout {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-end;
+        position: absolute;
+        gap: 1vh;
+        left: 5vw;
+        font-size: 24px;
+        text-align: right;
+        width: 25vw;
+        color: #fff;
+      }
+
+      .buttonPersonalise {
+        background-color: #000000;
+        color: #fff;
+        font-size: 18px;
+        text-align: center;
+        border-radius: 50px;
+        border: 2px solid white;
+        padding: 8px;
+      }
+
+      .buttonPersonalise:hover {
+        background-color: #ffffff;
+        color: #009CD4;
+      }
+
+      .buttonPersonalise:active {
+        background-color: #009CD4;
+        border: 2px solid #009CD4;
+        color: #ffffff;
+      }
+
+      #buttonTest {
+        margin-top: 20px;
+        padding: 10px 20px;
+        width: 50vw;
+        background-color: #c7c7c7;
+        color: #0d0d0d;
+        border: none;
+        border-radius: 300px;
+        cursor: pointer;
+        font-size: 128px;
+        text-align: center;
+        font-family: "ABeeZee", serif;
+        font-weight: 400;
+        font-style: normal;
+      }
+      #flecheBasPageAcce{
+        width: 110px;
+        height: 55px;
+
+      }
+      #productPersonalise{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        width: 100vw;
+        background-color: #000000;
+      }
+
+      #about {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        width: 100vw;
+        background-color: #000000;
+      }
+    }
 </style>
