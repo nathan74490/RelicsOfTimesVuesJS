@@ -31,7 +31,7 @@ footer {
     padding: 20px 0;
     position: sticky;
     bottom: 0;
-    width: 100%;
+    width: 100vw;
 }
 .footer-container{
     display: flex;
@@ -39,6 +39,9 @@ footer {
     justify-content: space-around;
     align-items: center;
     padding: 0 20px;
+}
+img {
+  width: 5vw;
 }
 .footer-links{
     display: flex;
@@ -49,5 +52,33 @@ footer {
 p {
     margin: 0;
     font-size: 24px;
+}
+
+@media screen and (max-width: 800px) {
+    footer {
+      background-color: #333;
+      color: white;
+      padding: 20px 0;
+      position: sticky;
+      bottom: 0;
+      width: 100vw;
+    }
+    .footer-container{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: center;
+      padding: 0 20px;
+    }
+    .footer-links{
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      width: 2vw;
+    }
+    p {
+      margin: 0;
+      font-size: 12px;
+    }
 }
 </style>
