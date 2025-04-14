@@ -66,13 +66,13 @@ p {
     .footer-container{
       display: flex;
       flex-direction: row;
-      justify-content: space-around;
+      justify-content: flex-start;
       align-items: center;
-      padding: 0 20px;
+      margin: 0;
+      padding: 0 10px;
     }
     .footer-links{
       display: flex;
-      justify-content: space-around;
       align-items: center;
       width: 2vw;
     }
