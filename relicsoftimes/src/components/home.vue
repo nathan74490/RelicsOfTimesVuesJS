@@ -15,7 +15,11 @@ import { RouterLink, RouterView } from 'vue-router'
             alt="Flèche indiquant un scrolle possible vers le bas">
     </section>
     <section id="productDescription">
-        <h2>THE GAME</h2>
+        <img id="card2" src="../assets/cards2.png" alt="Cartes du jeu Relics Of Times" />
+        <p id="textDesc">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
     </section>
 </template>
 
@@ -51,6 +55,20 @@ import { RouterLink, RouterView } from 'vue-router'
       right: 0;
       height: 100%;
       width: 100%;
+    }
+
+    #card2 {
+      height: 100%;
+      width: 100%;
+    }
+
+    #textDesc {
+      position: absolute;
+      right: 5vw;
+      font-size: 24px;
+      text-align: right;
+      width: 25vw;
+      color: #fff;
     }
 
     #buttonTest {
