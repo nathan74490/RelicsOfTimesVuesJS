@@ -141,7 +141,7 @@ import { RouterLink, RouterView } from 'vue-router'
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        height: 50vh;
+        height: 45vh;
         width: 100vw;
         background-color: #131313;
       }
@@ -153,6 +153,10 @@ import { RouterLink, RouterView } from 'vue-router'
         color: #fff;
         white-space: nowrap;
         left: 5vw;
+      }
+
+      #textDesc {
+        font-size: 3vw;
       }
 
       #card1 {
@@ -178,9 +182,8 @@ import { RouterLink, RouterView } from 'vue-router'
         position: absolute;
         gap: 1vh;
         right: 5vw;
-        font-size: 24px;
         text-align: right;
-        width: 25vw;
+        width: 30vw;
         color: #fff;
       }
 
@@ -192,31 +195,17 @@ import { RouterLink, RouterView } from 'vue-router'
         position: absolute;
         gap: 1vh;
         left: 5vw;
-        font-size: 24px;
         text-align: right;
-        width: 25vw;
+        width: 30vw;
         color: #fff;
+      }
+
+      #textAbout {
+        font-size: 3vw;
       }
 
       .buttonPersonalise {
-        background-color: #000000;
-        color: #fff;
-        font-size: 18px;
-        text-align: center;
-        border-radius: 50px;
-        border: 2px solid white;
-        padding: 8px;
-      }
-
-      .buttonPersonalise:hover {
-        background-color: #ffffff;
-        color: #009CD4;
-      }
-
-      .buttonPersonalise:active {
-        background-color: #009CD4;
-        border: 2px solid #009CD4;
-        color: #ffffff;
+        font-size: 2vw;
       }
 
       #buttonTest {
@@ -244,7 +233,7 @@ import { RouterLink, RouterView } from 'vue-router'
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        height: 100vh;
+        height: 45vh;
         width: 100vw;
         background-color: #000000;
       }
@@ -254,7 +243,7 @@ import { RouterLink, RouterView } from 'vue-router'
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        height: 100vh;
+        height: 45vh;
         width: 100vw;
         background-color: #000000;
       }
