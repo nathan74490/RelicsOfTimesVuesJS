@@ -79,27 +79,7 @@ import { RouterLink, RouterView } from 'vue-router'
       color: #fff;
     }
 
-    #buttonPersonalise {
-      background-color: #000000;
-      color: #fff;
-      font-size: 18px;
-      text-align: center;
-      border-radius: 50px;
-      border: 2px solid white;
-      padding: 8px;
-      width: 55%;
-    }
-
-    #buttonPersonalise:hover {
-      background-color: #ffffff;
-      color: #009CD4;
-    }
-
-    #buttonPersonalise:active {
-      background-color: #009CD4;
-      border: 2px solid #009CD4;
-      color: #ffffff;
-    }
+    
 
     #buttonTest {
         margin-top: 20px;

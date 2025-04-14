@@ -1,14 +1,21 @@
 <template>
+  <img id="background" src="../assets/fondJeux.svg" alt="">
   <div class="container">
+    <div>
+      
+    </div>
     <div class="container-dessin">
 
       <div v-if="randomDessin">
         <h2>{{ randomDessin.nom }}</h2>
         <!-- <img :src="randomDessin.image" :alt="randomDessin.nom" width="150" /> -->
-        <div id="carte"></div>
+        <div >
+          <img id="carte"src="../assets/image.jpg" alt="">
+        </div>
 
       </div>
       <div class="formulaire">
+        <h3 id="formulaire-title">Mots clées</h3>
         <div class="formulaire-champs">
           <input v-model="champ1" class="champ-texte" placeholder="Pose une question..." />
           <input v-model="champ2" class="champ-texte" placeholder="Pose une question..." />
@@ -16,7 +23,7 @@
           <input v-model="champ4" class="champ-texte" placeholder="Pose une question..." />
         </div>
         <!-- <button @click="getRandomDessin">Nouveau dessin aléatoire</button> -->
-        <button class="bouton-arrondi" @click="getResponse">Confirmer</button>
+        <button id="buttonPersonalise" style="width: 20%;" @click="getResponse">Confirmer</button>
       </div>
     </div>
 
@@ -86,13 +93,21 @@ Mots à analyser : [ ${champ1.value}, ${champ2.value}, ${champ3.value}, ${champ4
 }
 </script>
 <style>
+body {
+  overflow-x: hidden;
+}
+h2 {
+  font-size: 24px;
+  color: #fff;
+  text-align: center;
+  margin-top: 20px;
+}
 .container {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-content: center;
-  /* margin-top: 20px;
-  min-height: 90vh; */
+  min-height: 90vh;
 }
 
 .container-dessin {
@@ -103,39 +118,59 @@ Mots à analyser : [ ${champ1.value}, ${champ2.value}, ${champ3.value}, ${champ4
   gap: 20px;
   margin-top: 20px;
 }
+#background{
+  position: absolute;
+  z-index: -1;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+}
 
 #carte {
+  /* max-width: 425px;
+  max-height: 620px; */
   width: 425px;
   height: 620px;
-  background-color: bisque;
+  /* background-color: bisque; */
   margin: 20px auto;
   border-radius: 32px;
 }
+
 .formulaire {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 20px;
-  margin-top: 20px;
+  /* margin-top: 20px; */
+}
+#formulaire-title{
+  background-color: #009CD4;
+  color: #fff;
+  font-size: 18px;
+  text-align: center;
+  border-radius: 15px;
+  border: 2px solid white;
+  padding: 8px;
 }
 .formulaire-champs {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
   gap: 20px;
   margin-top: 20px;
 }
 
 .champ-texte {
-  width: 100%;
+  width: 30%;
   max-width: 400px;
   padding: 12px 16px;
   font-size: 16px;
   border: 2px solid #ccc;
   border-radius: 8px;
+  margin-top: 5vh;
   outline: none;
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
@@ -145,18 +180,6 @@ Mots à analyser : [ ${champ1.value}, ${champ2.value}, ${champ3.value}, ${champ4
   border-color: #4a90e2;
   box-shadow: 0 0 0 4px rgba(74, 144, 226, 0.2);
 }
-.bouton-arrondi {
-  padding: 10px 20px;
-  border: none;
-  border-radius: 25px; /* Bords arrondis */
-  background-color: #444; /* Couleur de fond par défaut */
-  color: white;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
 
-.bouton-arrondi:hover {
-  background-color: #007BFF; /* Bleu au survol */
-}
 
 </style>
