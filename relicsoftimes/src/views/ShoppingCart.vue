@@ -27,7 +27,24 @@
     </div>
     <div id="orderInfo">
       <form>
-        <input type="text" placeholder="adresse" required>
+        <div id="cardInfo">
+          <label class="label">Adresse :</label>
+          <input type="text" class="textInput" placeholder="adresse" required>
+          <label class="label">Nom du titulaire :</label>
+          <input type="text" class="textInput" placeholder="nom du titulaire" required>
+          <label class="label">Numéro de carte :</label>
+          <input type="text" class="textInput" maxlength="16" placeholder="XXXX XXXX XXXX XXXX" required>
+        </div>
+        <div id="cardNumber">
+          <div class="cNumber">
+            <label class="label">Date d'expiration</label>
+            <input type="text" class="numberInput" maxlength="5" placeholder="XX/XX" required>
+          </div>
+          <div class="cNumber">
+            <label class="label">CVC</label>
+            <input type="text" class="numberInput" maxlength="3" placeholder="XXX" required>
+          </div>
+        </div>
       </form>
     </div>
   </section>
@@ -51,6 +68,37 @@
   #cards {
     width: 50%;
     height: 50%;
+  }
+  #orderInfo {
+    padding-right: 25vw;
+    padding-left: 25vw;
+  }
+  #cardInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  #cardNumber {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .textInput {
+    width: 100%;
+    height: 40px;
+  }
+  .numberInput {
+    width: 100%;
+    height: 40px;
+  }
+  .cNumber {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 20vw;
   }
 </style>
 <script setup lang="ts">
