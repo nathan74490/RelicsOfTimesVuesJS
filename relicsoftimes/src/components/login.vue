@@ -29,6 +29,7 @@
 
 h1 {
     text-align: center;
+    color: white;
     margin-top: 50px;
     font-size: 2.5rem;
     font-weight: bold;
