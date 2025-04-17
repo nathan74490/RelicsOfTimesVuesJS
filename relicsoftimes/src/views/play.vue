@@ -79,6 +79,7 @@
   Si le mot est pertinent, il rapporte 10 points, sinon 0 point.
   Donne-moi pour chaque mot une réponse structurée ainsi :
   Mot : [mot] – Pertinent : [Oui / Non] – Points : [0 ou 10] – Justification : [courte explication]
+  si les mots animes sont nul retourne moi "aucun mot a ete trouve"
   
   Voici les données :
   Titre du dessin animé : ${randomDessin.value.nom} 
