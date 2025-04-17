@@ -26,7 +26,7 @@
 
 <style>
 footer {
-    background-color: #333;
+    background-color: transparent;
     color: white;
     padding: 20px 0;
     position: sticky;
