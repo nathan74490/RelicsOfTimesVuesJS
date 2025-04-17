@@ -2,17 +2,27 @@
   <section id="order">
     <h1>VOTRE COMMANDE</h1>
     <div id="container">
+      <div></div>
       <div id="information">
-        <p>Info personnalisation :</p>
-        <p>Lorem ipsum blablablabla</p>
-        <p>Date de livraison :</p>
-        <p>Lorem ipsum blablablabla</p>
-        <p>Quantité :</p>
-        <input type="number" max="10" placeholder="1" required>
-        <p>Prix :</p>
-        <p>9999€</p>
+        <div class="info">
+          <p class="infosLabel">Info personnalisation :</p>
+          <p class="infos">Lorem ipsum blablablabla</p>
+        </div>
+        <div class="info">
+          <p class="infosLabel">Date de livraison :</p>
+          <p class="infos">Lorem ipsum blablablabla</p>
+        </div>
+        <div class="info">
+          <p class="infosLabel">Quantité :</p>
+          <input type="number" max="10" placeholder="1" required>
+        </div>
+        <div class="info">
+          <p class="infosLabel">Prix :</p>
+          <p class="infos">9999€</p>
+        </div>
       </div>
       <img id="cards" src="../assets/doubleCards.png">
+      <div></div>
     </div>
   </section>
   <section id="cart">
@@ -50,6 +60,13 @@
   </section>
 </template>
 <style>
+  body {
+    color: white;
+    background-image: url("../assets/fond_registeur.svg");
+  }
+  h1 {
+    color: white;
+  }
   #order {
     display: flex;
     flex-direction: column;
@@ -63,13 +80,14 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    width: 50vw;
+    width: 100%;
   }
   #cards {
-    width: 50%;
-    height: 50%;
+    width: 25%;
+    height: 25%;
   }
   #orderInfo {
+    color: #009CD4;
     padding-right: 25vw;
     padding-left: 25vw;
   }
@@ -88,10 +106,14 @@
   .textInput {
     width: 100%;
     height: 40px;
+    border: 3px solid #009CD4;
+    border-radius: 8px;
   }
   .numberInput {
     width: 100%;
     height: 40px;
+    border: 3px solid #009CD4;
+    border-radius: 8px;
   }
   .cNumber {
     display: flex;
@@ -99,6 +121,45 @@
     justify-content: center;
     align-items: flex-start;
     width: 20vw;
+  }
+  #information {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1vh;
+    width: 30vw;
+  }
+  .infos {
+    display: flex;
+    align-items: center;
+    background-color: #ffffff;
+    color: black;
+    text-align: left;
+    width: 100%;
+    height: 40px;
+    border-radius: 8px;
+    border: 3px solid #009CD4;
+  }
+  .infosLabel {
+    color: #009CD4;
+  }
+  .info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+  }
+  #buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  h3 {
+    text-align: center;
   }
 </style>
 <script setup lang="ts">
