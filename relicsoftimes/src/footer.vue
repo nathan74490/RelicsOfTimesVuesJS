@@ -41,13 +41,13 @@ footer {
     /* padding: 0 20px; */
 }
 img {
-  width: 5vw;
+  width: 4vw;
 }
 .footer-links{
     display: flex;
     justify-content: space-around;
     align-items: center;
-    width: 10vw;
+    width: 15vw;
 }
 p {
     margin: 0;
@@ -66,7 +66,7 @@ p {
     .footer-container{
       display: flex;
       flex-direction: row;
-      justify-content: flex-start;
+      /* justify-content: flex-start; */
       align-items: center;
       margin: 0;
       padding: 0 10px;
@@ -74,7 +74,7 @@ p {
     .footer-links{
       display: flex;
       align-items: center;
-      width: 2vw;
+      width: 15vw;
     }
     p {
       margin: 0;
