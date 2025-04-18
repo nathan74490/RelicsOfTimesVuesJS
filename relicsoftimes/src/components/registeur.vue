@@ -26,6 +26,18 @@
     </div>
 </template>
 <style>
+ body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-image: url('../assets/fondLogin.svg');
+    /* background-color: rgba(1, 1, 1, 0.644); */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    /* background: radial-gradient(circle at bottom left, #1a1a1a, #000000); */
+    color: white;
+    min-height: 100vh;
+}
 .info_profil {
     display: flex;
     flex-direction: row;
@@ -51,6 +63,33 @@ h1 {
     justify-content: center;
     align-items: center;
     /* margin-top: 40px; */
+}
+input[type="email"],
+input[type="text"],
+input[type="password"] {
+    padding: 10px;
+    border: 3px solid #ccc;
+    border-radius: 50px;
+    background-color: transparent;
+    color: #ccc;
+    font-size: 24px ;
+}
+button[type="submit"] {
+    background-color: #009CD4;
+    text-align: center;
+    font-size: 36px;
+    border: none;
+    color: white;
+    padding: 10px;
+    border-radius: 50px;
+    /* font-size: 1rem; */
+    /* cursor: pointer; */
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: white;
+    color: black;
 }
 
 #photo_user {
@@ -92,19 +131,5 @@ input[type="password"] {
     font-size: 1rem;
 }
 
-button[type="submit"] {
-    background-color: transparent;
-    border: 1px solid white;
-    color: white;
-    padding: 10px;
-    border-radius: 20px;
-    font-size: 1rem;
-    /* cursor: pointer; */
-    transition: background 0.3s ease, color 0.3s ease;
-}
 
-button[type="submit"]:hover {
-    background-color: white;
-    color: black;
-}
 </style>
