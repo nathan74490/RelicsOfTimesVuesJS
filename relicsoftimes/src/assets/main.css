@@ -5,6 +5,10 @@
   src: url("../assets/fonts/Elegante Classica.ttf");
 }
 
+body{
+  overflow-x: hidden;
+}
+
 h1{
   color:black
 }
