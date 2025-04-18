@@ -95,7 +95,7 @@
     height: 35%;
   }
   #orderInfo {
-    color: #009CD4;
+    color: #ffffff;
     padding-right: 25vw;
     padding-left: 25vw;
   }
@@ -114,17 +114,17 @@
   .textInput {
     width: 100%;
     height: 40px;
-    color: black;
-    border: 3px solid #009CD4;
-    background-color: #ffffff;
+    background-color: transparent;
+    color: white;
+    border: 3px solid #ffffff;
     border-radius: 8px;
   }
   .numberInput {
     width: 100%;
     height: 40px;
-    border: 3px solid #009CD4;
-    color: black;
-    background-color: #ffffff;
+    background-color: transparent;
+    color: white;
+    border: 3px solid #ffffff;
     border-radius: 8px;
   }
   .cNumber {
@@ -145,17 +145,18 @@
   .infos {
     display: flex;
     align-items: center;
-    background-color: #ffffff;
-    color: black;
+    background-color: transparent;
+    color: white;
     text-align: left;
     width: 100%;
     height: 40px;
     font-size: 20px;
     border-radius: 8px;
-    border: 3px solid #009CD4;
+    border: 3px solid #ffffff;
+    padding-left: 1vw;
   }
   .infosLabel {
-    color: #009CD4;
+    color: #ffffff;
   }
   .info {
     display: flex;
@@ -190,6 +191,9 @@
     align-items: center;
     width: 100%;
     margin-top: 2vh;
+  }
+  input, textarea {
+    padding-left: 1vh;
   }
 </style>
 <script setup lang="ts">

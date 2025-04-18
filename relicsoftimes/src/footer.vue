@@ -31,7 +31,7 @@ footer {
     padding: 20px 0;
     position: absolute;
     /* bottom: 0px; */
-    width: 99vw;
+    width: 100vw;
 }
 .footer-container{
     display: flex;

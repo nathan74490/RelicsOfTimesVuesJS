@@ -101,7 +101,7 @@
     font-size: 24px;
     color: #fff;
     text-align: center;
-    margin-top: 20px;
+    margin-top: 10vh;
   }
   .container {
     display: flex;
@@ -136,7 +136,11 @@
     margin: 20px auto;
     border-radius: 32px;
   }
-  
+
+  .container {
+    margin-top: 0;
+  }
+
   .formulaire {
     display: flex;
     flex-direction: column;
