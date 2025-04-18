@@ -43,6 +43,7 @@ import { RouterLink, RouterView } from 'vue-router'
     }
 
     #title {
+      font-family: "Relics Of Times";
       position: absolute;
       z-index: 99;
       font-size: 5vw;

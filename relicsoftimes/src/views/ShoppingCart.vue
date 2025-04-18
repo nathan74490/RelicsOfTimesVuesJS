@@ -21,7 +21,7 @@
           <p class="infos">9999€</p>
         </div>
       </div>
-      <img id="cards" src="../assets/doubleCards.png">
+      <img id="cards" src="../assets/cardsOrder.png">
       <div></div>
     </div>
   </section>
@@ -29,11 +29,11 @@
     <h3>Mode de paiement</h3>
     <div id="buttons">
       <label>Carte</label>
-      <input type="radio" value="Carte" name="paiement" checked/>
+      <input class="radio" type="radio" value="Carte" name="paiement" checked/>
       <label>Paypal</label>
-      <input type="radio" value="Paypal" name="paiement"/>
+      <input class="radio" type="radio" value="Paypal" name="paiement"/>
       <label>Visa</label>
-      <input type="radio" value="Visa" name="paiement"/>
+      <input class="radio" type="radio" value="Visa" name="paiement"/>
     </div>
     <div id="orderInfo">
       <form>
@@ -55,6 +55,9 @@
             <input type="text" class="numberInput" maxlength="3" placeholder="XXX" required>
           </div>
         </div>
+        <div class="submitOrder">
+          <input class="buttonPersonalise" type="submit" value="Payer Maintenant" />
+        </div>
       </form>
     </div>
   </section>
@@ -66,6 +69,8 @@
   }
   h1 {
     color: white;
+    margin-top: 15vh;
+    font-family: "Relics Of Times";
   }
   #order {
     display: flex;
@@ -75,6 +80,9 @@
     gap: 2vh;
     width: 100vw;
   }
+  #cart {
+    margin-bottom: 5vh;
+  }
   #container {
     display: flex;
     flex-direction: row;
@@ -83,8 +91,8 @@
     width: 100%;
   }
   #cards {
-    width: 25%;
-    height: 25%;
+    width: 35%;
+    height: 35%;
   }
   #orderInfo {
     color: #009CD4;
@@ -106,13 +114,17 @@
   .textInput {
     width: 100%;
     height: 40px;
+    color: black;
     border: 3px solid #009CD4;
+    background-color: #ffffff;
     border-radius: 8px;
   }
   .numberInput {
     width: 100%;
     height: 40px;
     border: 3px solid #009CD4;
+    color: black;
+    background-color: #ffffff;
     border-radius: 8px;
   }
   .cNumber {
@@ -138,6 +150,7 @@
     text-align: left;
     width: 100%;
     height: 40px;
+    font-size: 20px;
     border-radius: 8px;
     border: 3px solid #009CD4;
   }
@@ -160,6 +173,23 @@
   }
   h3 {
     text-align: center;
+    font-family: "Relics Of Times";
+  }
+  .radio {
+    z-index: 999;
+    height: 2vh;
+    width: 5vw;
+    background-color: #ffffff;
+    border: 3px solid #009CD4;
+    border-radius: 8px;
+  }
+  .submitOrder {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 2vh;
   }
 </style>
 <script setup lang="ts">
