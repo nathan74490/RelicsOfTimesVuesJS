@@ -19,8 +19,8 @@ import { RouterLink, RouterView } from 'vue-router'
             <li>
                 
                 <!-- <a href="index.html"></a> -->
-                 <a href="/#productPersonalise"> A propos</a>
-                 <RouterLink to="/Personaliser"><a>Personnaliser</a></RouterLink>
+                 <a id="link" href="/#productPersonalise"> A propos</a>
+                 <RouterLink to="/Personaliser"><a id="link">Personnaliser</a></RouterLink>
                  
                 <!-- <a href="contact.html">Contact</a> -->
             </li>
@@ -67,10 +67,16 @@ ul {
     margin: 0;
 }
 
-a {
+#link {
+    font-family: "Relics Of Times";
     text-decoration: none;
     font-size: 36px;
     color: white;
+}
+
+a {
+  text-decoration: none;
+  color: white;
 }
 
 header {
