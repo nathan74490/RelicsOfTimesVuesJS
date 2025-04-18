@@ -31,14 +31,14 @@ footer {
     padding: 20px 0;
     position: absolute;
     /* bottom: 0px; */
-    width: 100vw;
+    width: 99vw;
 }
 .footer-container{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    padding: 0 20px;
+    /* padding: 0 20px; */
 }
 img {
   width: 5vw;

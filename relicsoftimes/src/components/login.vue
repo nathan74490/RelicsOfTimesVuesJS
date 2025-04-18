@@ -8,9 +8,9 @@
             <form class="formulaire">
                 <input type="email" id="email" placeholder="Mail" name="email" required>
                 <input type="password" id="password" placeholder="Mot de passe" name="password" required>
-                <a href="#">Mot de passe oublié</a>
+                <a href="#" id="motDePasseOubilie">Mot de passe oublié</a>
                 <button type="submit">Se connecter</button>
-                <RouterLink  to="/register">Créer un compte</RouterLink>
+                <RouterLink id="register" to="/register">Créer un compte</RouterLink>
             </form>
         </div>
     </div>
@@ -70,7 +70,14 @@
     gap: 20px;
     width: 425px;
 }
-
+#motDePasseOubilie{
+    align-self: flex-end;
+    font-size: 20px;
+}
+#register{
+    align-self: center;
+    font-size: 24px;
+}
 label {
     font-weight: 500;
     margin-bottom: 5px;
@@ -78,13 +85,18 @@ label {
 }
 
 input[type="email"],
+input[type="text"],
 input[type="password"] {
     padding: 10px;
     border: 3px solid #ccc;
     border-radius: 50px;
-    background-color: #000;
+    background-color: transparent;
     color: #ccc;
-    font-size: 1rem;
+    font-size: 24px ;
+}
+
+input::placeholder {
+    padding-left: 1vw;
 }
 
 button[type="submit"] {

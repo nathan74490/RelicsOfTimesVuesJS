@@ -1,42 +1,31 @@
 <template>
-    <h1>MON PROFIL</h1>
-    <div class="info_profil" >
-        
-        <div>
-            <div id="photo_user">
-                <img src="../assets/defaultuser.svg" alt="">
+    <div class="container">
+        <h1>Créer mon compte</h1>
+        <div class="info_profil"> 
+
+
+            <div id="form">
+                <form class="formulaire">
+                    
+                    <input type="text" id="nom" placeholder="Nom" name="nom" required>
+
+                    
+                    <input type="text" id="prenom" placeholder="Prenom"  name="prenom" required>
+
+                    
+                    <input type="email" id="email" placeholder="Email" name="email" required>
+
+                    
+                    <input type="password" id="password" placeholder="Mot de passe" name="password" required>
+
+
+                    <button type="submit">Créer</button>
+                </form>
             </div>
-            <button>Modifier la photo</button>
-        </div>
-        <div id="form">
-            <form class="formulaire">
-                <label for="nom">Nom :</label>
-                <input type="text" id="nom" name="nom" required>
-
-                <label for="nom">Prenom :</label>
-                <input type="text" id="prenom" name="prenom" required>
-
-                <label for="email">Email :</label>
-                <input type="email" id="email" name="email" required>
-
-                <label for="password">Mot de passe :</label>
-                <input type="password" id="password" name="password" required>
-
-
-                <button type="submit">Créer</button>
-            </form>
         </div>
     </div>
-
 </template>
 <style>
-body {
-    margin: 0;
-    font-family: 'Segoe UI', sans-serif;
-    background-image: url("../assets/fond_registeur.svg");
-    color: white;
-    min-height: 100vh;
-}
 .info_profil {
     display: flex;
     flex-direction: row;
@@ -46,11 +35,14 @@ body {
     gap: 20px;
     margin-top: 20px;
 }
+
 h1 {
     text-align: center;
+    color: #fff;
     margin-top: 50px;
-    font-size: 2.5rem;
-    font-weight: bold;
+    font-size: 64px;
+    font-family: 'Elegante Classica', sans-serif;
+    /* font-weight: bold; */
     letter-spacing: 2px;
 }
 
@@ -60,6 +52,7 @@ h1 {
     align-items: center;
     /* margin-top: 40px; */
 }
+
 #photo_user {
     display: flex;
     justify-content: center;
@@ -72,14 +65,14 @@ h1 {
 }
 
 .formulaire {
-    background-color: rgba(84, 84, 84, 0.484);
+    /* background-color: rgba(84, 84, 84, 0.484); */
     padding: 30px 40px;
     border-radius: 20px;
-    box-shadow: 0 0 25px rgba(94, 94, 94, 0.05);
+    /* box-shadow: 0 0 25px rgba(94, 94, 94, 0.05);c  */
     display: flex;
     flex-direction: column;
     gap: 20px;
-    width: 300px;
+    width: 425px;
 }
 
 label {
