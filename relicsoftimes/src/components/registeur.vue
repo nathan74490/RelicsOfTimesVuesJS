@@ -19,7 +19,7 @@
                     <input type="password" id="password" placeholder="Mot de passe" name="password" required>
 
 
-                    <button type="submit">Créer</button>
+                    <button type="submit">Créer le compte</button>
                 </form>
             </div>
         </div>
@@ -74,6 +74,9 @@ input[type="password"] {
     color: #ccc;
     font-size: 24px ;
 }
+input::placeholder {
+    padding-left: 1vw;
+}
 button[type="submit"] {
     background-color: #009CD4;
     text-align: center;
@@ -92,16 +95,6 @@ button[type="submit"]:hover {
     color: black;
 }
 
-#photo_user {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 500px;
-    height: 500px;
-    border-radius: 5%;
-    margin-bottom: 20px;
-    background-color: #8e8e8e;
-}
 
 .formulaire {
     /* background-color: rgba(84, 84, 84, 0.484); */
@@ -113,23 +106,5 @@ button[type="submit"]:hover {
     gap: 20px;
     width: 425px;
 }
-
-label {
-    font-weight: 500;
-    margin-bottom: 5px;
-    font-size: 0.9rem;
-}
-
-input[type="email"],
-input[type="text"],
-input[type="password"] {
-    padding: 10px;
-    border: none;
-    border-radius: 10px;
-    background-color: #ccc;
-    color: #000;
-    font-size: 1rem;
-}
-
 
 </style>
