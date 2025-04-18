@@ -26,11 +26,11 @@
 
 <style>
 footer {
-    background-color: transparent;
+    background-color: black;
     color: white;
     padding: 20px 0;
-    position: sticky;
-    bottom: 0;
+    position: absolute;
+    /* bottom: 0px; */
     width: 100vw;
 }
 .footer-container{

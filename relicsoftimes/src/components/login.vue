@@ -1,37 +1,54 @@
 <template>
-    <div>
-        <h1>Connecter vous</h1>
+    <div id="container" class="container">
+        <div></div>
+        <div>
+        <h3 id="seconnecter">Se connecter</h3>
         <div id="form">
+            
             <form class="formulaire">
-                <label for="email">Email :</label>
-                <input type="email" id="email" name="email" required>
-
-                <label for="password">Mot de passe :</label>
-                <input type="password" id="password" name="password" required>
-
-
-                <button class="buttonPersonalise">Se connecter</button>
-                <RouterLink class="buttonPersonalise" to="/register">s'inscrire</RouterLink>
+                <input type="email" id="email" placeholder="Mail" name="email" required>
+                <input type="password" id="password" placeholder="Mot de passe" name="password" required>
+                <a href="#">Mot de passe oublié</a>
+                <button type="submit">Se connecter</button>
+                <RouterLink  to="/register">Créer un compte</RouterLink>
             </form>
         </div>
+    </div>
         
     </div>
 
 </template>
 <style>
-    body {
+    /* body {
     margin: 0;
     font-family: 'Segoe UI', sans-serif;
-    background: radial-gradient(circle at bottom left, #1a1a1a, #000000);
+    background-image: url('../assets/fondLogin.svg');
     color: white;
     min-height: 100vh;
-}
+} */
+#container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    gap: 30vw;
 
-h1 {
+}
+#fondLogin {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+    /* opacity: 0.5; */
+}
+#seconnecter{
+    font-family: 'Elegante Classica', sans-serif;
+    font-size: 70px !important;
     text-align: center;
     color: white;
     margin-top: 50px;
-    font-size: 2.5rem;
     font-weight: bold;
     letter-spacing: 2px;
 }
@@ -40,18 +57,18 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 40px;
+    /* margin-top: 40px; */
 }
 
 .formulaire {
-    background-color: rgba(255, 255, 255, 0.05);
+    /* background-color: rgba(22, 22, 22, 0.966); */
     padding: 30px 40px;
     border-radius: 20px;
-    box-shadow: 0 0 25px rgba(255, 255, 255, 0.05);
+    /* box-shadow: 0 0 25px rgba(255, 255, 255, 0.05); */
     display: flex;
     flex-direction: column;
     gap: 20px;
-    width: 300px;
+    width: 425px;
 }
 
 label {
@@ -63,20 +80,22 @@ label {
 input[type="email"],
 input[type="password"] {
     padding: 10px;
-    border: none;
-    border-radius: 10px;
-    background-color: #ccc;
-    color: #000;
+    border: 3px solid #ccc;
+    border-radius: 50px;
+    background-color: #000;
+    color: #ccc;
     font-size: 1rem;
 }
 
 button[type="submit"] {
-    background-color: transparent;
-    border: 1px solid white;
+    background-color: #009CD4;
+    text-align: center;
+    font-size: 36px;
+    border: none;
     color: white;
     padding: 10px;
-    border-radius: 20px;
-    font-size: 1rem;
+    border-radius: 50px;
+    /* font-size: 1rem; */
     /* cursor: pointer; */
     transition: background 0.3s ease, color 0.3s ease;
 }

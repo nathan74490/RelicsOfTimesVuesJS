@@ -19,7 +19,7 @@ import { RouterLink, RouterView } from 'vue-router'
             <li>
                 
                 <!-- <a href="index.html"></a> -->
-                 <RouterLink to="/A_Propos"><a>A propos</a></RouterLink>
+                 <a href="/#productPersonalise"> A propos</a>
                  <RouterLink to="/Personaliser"><a>Personnaliser</a></RouterLink>
                  
                 <!-- <a href="contact.html">Contact</a> -->
@@ -38,7 +38,7 @@ import { RouterLink, RouterView } from 'vue-router'
 </template>
 
 <style>
-body {
+body { 
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
 }
@@ -75,13 +75,14 @@ a {
 
 header {
     display: flex;
-    position: sticky;
+    position: absolute;
     justify-content: space-around;
     align-items: center;
     gap: 1rem;
     width: 100%;
-    background-color: black;
+    background-color: transparent;
     max-height: 10.9vh;
+    
 }
 .settings{
     display: flex;
