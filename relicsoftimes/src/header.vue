@@ -20,7 +20,7 @@ import { RouterLink, RouterView } from 'vue-router'
                 
                 <!-- <a href="index.html"></a> -->
                  <a id="link" href="/#productPersonalise"> A propos</a>
-                 <RouterLink to="/Personaliser"><a id="link">Personnaliser</a></RouterLink>
+                 <RouterLink to="/Personnaliser"><a id="link">Personnaliser</a></RouterLink>
                  
                 <!-- <a href="contact.html">Contact</a> -->
             </li>
