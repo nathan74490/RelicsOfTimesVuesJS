@@ -69,19 +69,13 @@ import defaultLogo from '@/assets/logos/logo_default.png'
 const imageModules = import.meta.glob('@/assets/logos/*.{svg,png,jpg,jpeg}', { eager: true })
 const images = Object.values(imageModules).map(mod => mod.default)
 
-// Logo sélectionné (par défaut = logo par défaut)
+
 const selectedLogo = ref(defaultLogo)
 
 function handleLogoSelected(logo) {
     selectedLogo.value = logo
 }
-// const imageModules = import.meta.glob('@/assets/logos/*.{svg,png,jpg,jpeg}', { eager: true })
-// const images = Object.values(imageModules).map(mod => mod.default)
-// const selectedLogo = ref('@/assets/logos/logo_default.png')
 
-// function handleLogoSelected(logo) {
-//     selectedLogo.value = logo
-// }
 
 </script>
 <style>
@@ -113,18 +107,8 @@ body {
     z-index: 500;
 }
 
-/* #carte{
-    
-    height: 918px;
-    width: 825px;
-    stroke-width:2;
-    stroke:green;
-    fill:#ff0000;
-    
-} */
 .mon-rectangle {
     fill: #4a4949;
-    /* Vert */
     stroke: none;
     stroke-width: 5px;
 }
