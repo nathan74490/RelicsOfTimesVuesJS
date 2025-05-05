@@ -1,12 +1,16 @@
 <script setup>
 
+import {RouterLink} from "vue-router";
 </script>
 
 <template>
-  <section id="result">
-    <img id="imgResult" src="../assets/gamePromo.png">
-    <h1 id="promoText">-20%</h1>
-  </section>
+  <div id="main">
+    <section id="result">
+      <img id="imgResult" src="../assets/gamePromo.png">
+      <h1 id="promoText">-20%</h1>
+    </section>
+    <RouterLink class="buttonPersonalise" style="width: 55%;" to="#">Je passe commande</RouterLink>
+  </div>
 </template>
 
 <style>

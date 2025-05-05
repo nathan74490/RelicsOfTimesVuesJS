@@ -12,10 +12,7 @@ import { RouterLink, RouterView } from 'vue-router'
     <section id="productPersonalise">
         <img id="card2" src="../assets/cards2.png" alt="Cartes du jeu Relics Of Times" />
         <div id="divDesc">
-          <p id="textDesc">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+          <p id="textDesc">Tout le monde a vécu une enfance, et nous ressentons tous une certaine nostalgie en nous remémorant les moments marquants de cette période. C’est pourquoi nous avons décidé de créer un jeu dans le style de Trivial Pursuit, mais centré sur ce qui a marqué notre enfance : des jouets, des dessins animés, etc. L’objectif de ce projet est de raviver les souvenirs d’enfance des joueurs.</p>
           <RouterLink class="buttonPersonalise" style="width: 55%;" to="#">Personnaliser</RouterLink>
         </div>
     </section>
