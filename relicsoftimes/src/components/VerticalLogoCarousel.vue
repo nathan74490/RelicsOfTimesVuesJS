@@ -1,5 +1,13 @@
 <template>
   <div class="carousel-container">
+    <input
+      type="file"
+      accept=".svg,.png,.jpg,.jpeg"
+      ref="fileInput"
+      style="display: none"
+      @change="handleFileChange"
+    />
+
     <div
       class="carousel-wrapper"
       ref="carouselRef"
@@ -8,8 +16,14 @@
       @mouseup="stopDrag"
       @mouseleave="stopDrag"
     >
+      <!-- Case spéciale pour ajouter un logo -->
+      <div class="carousel-item add-item" @click="triggerFileInput">
+        +
+      </div>
+
+      <!-- Logos normaux -->
       <div
-        v-for="(image, index) in images"
+        v-for="(image, index) in imagesInternal"
         :key="index"
         class="carousel-item"
         @click="handleClick(image)"
@@ -21,7 +35,7 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, watchEffect } from 'vue'
 
 const props = defineProps({
   images: {
@@ -32,7 +46,27 @@ const props = defineProps({
 
 const emit = defineEmits(['logoSelected'])
 
+const fileInput = ref(null)
 const carouselRef = ref(null)
+const imagesInternal = ref([...props.images]) // images modifiables
+
+// Pour l'ajout
+function triggerFileInput() {
+  fileInput.value.click()
+}
+
+function handleFileChange(event) {
+  const file = event.target.files[0]
+  if (file && file.type === 'image/svg+xml') {
+    const reader = new FileReader()
+    reader.onload = () => {
+      imagesInternal.value.push(reader.result)
+    }
+    reader.readAsDataURL(file)
+  }
+}
+
+// Pour le drag scroll vertical
 const isDragging = ref(false)
 const startY = ref(0)
 const scrollTop = ref(0)
@@ -65,6 +99,11 @@ function handleClick(image) {
     emit('logoSelected', image)
   }
 }
+
+// Mise à jour si les props changent
+watchEffect(() => {
+  imagesInternal.value = [...props.images]
+})
 </script>
 
 <style scoped>
@@ -83,7 +122,7 @@ function handleClick(image) {
 
 .carousel-wrapper {
   display: grid;
-  grid-template-columns: repeat(2, 102px); /* 2 logos par ligne, taille fixe */
+  grid-template-columns: repeat(2, 102px);
   row-gap: 1rem;
   column-gap: 1rem;
   overflow-y: auto;
@@ -92,7 +131,7 @@ function handleClick(image) {
   cursor: grab;
   user-select: none;
   padding-right: 0.5rem;
-  justify-content: center; /* centre les colonnes dans le conteneur */
+  justify-content: center;
 }
 
 .carousel-wrapper::-webkit-scrollbar {
@@ -107,7 +146,7 @@ function handleClick(image) {
   width: 102px;
   height: 102px;
   border-radius: 12px;
-  background: #f5f5f5;
+  background: #959595;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -118,5 +157,13 @@ function handleClick(image) {
   width: 80%;
   height: 80%;
   object-fit: contain;
+}
+
+/* Style de la case "+" */
+.add-item {
+  font-size: 48px;
+  font-weight: bold;
+  background: #e0e0e0;
+  color: #333;
 }
 </style>
