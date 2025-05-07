@@ -1,42 +1,56 @@
 <template>
-    <div class="container">
-        <h1>Créer mon compte</h1>
-        <div class="info_profil"> 
+    <div id="pageregisteur">
+        <div id="containerRegisteur">
+            <div id="titleRgister">
+                <h1>Créer mon compte</h1>
+            </div>
+            
+            <div class="info_profil">
 
 
-            <div id="form">
-                <form class="formulaire">
-                    
-                    <input type="text" id="nom" placeholder="Nom" name="nom" required>
+                <div id="formRgister">
+                    <form class="formulaire">
 
-                    
-                    <input type="text" id="prenom" placeholder="Prenom"  name="prenom" required>
-
-                    
-                    <input type="email" id="email" placeholder="Email" name="email" required>
-
-                    
-                    <input type="password" id="password" placeholder="Mot de passe" name="password" required>
+                        <input type="text" id="nom" placeholder="Nom" name="nom" required>
 
 
-                    <button type="submit">Créer le compte</button>
-                </form>
+                        <input type="text" id="prenom" placeholder="Prenom" name="prenom" required>
+
+
+                        <input type="email" id="email" placeholder="Email" name="email" required>
+
+
+                        <input type="password" id="password" placeholder="Mot de passe" name="password" required>
+
+
+                        <button type="submit">Créer le compte</button>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
 </template>
 <style>
- body {
+#pageregisteur {
     margin: 0;
     font-family: 'Segoe UI', sans-serif;
     background-image: url('../assets/fondLogin.svg');
-    /* background-color: rgba(1, 1, 1, 0.644); */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    /* background: radial-gradient(circle at bottom left, #1a1a1a, #000000); */
     color: white;
     min-height: 100vh;
+}
+#containerRegisteur {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    /* gap: 10vh; */
+    /* margin-top: 20vh; */
+}
+#titleRgister {
+    margin-top: 20vh;
 }
 .info_profil {
     display: flex;
@@ -58,12 +72,13 @@ h1 {
     letter-spacing: 2px;
 }
 
-#form {
+#formRgister {
     display: flex;
     justify-content: center;
     align-items: center;
     /* margin-top: 40px; */
 }
+
 input[type="email"],
 input[type="text"],
 input[type="password"] {
@@ -72,11 +87,13 @@ input[type="password"] {
     border-radius: 50px;
     background-color: transparent;
     color: #ccc;
-    font-size: 24px ;
+    font-size: 24px;
 }
+
 input::placeholder {
     padding-left: 1vw;
 }
+
 button[type="submit"] {
     background-color: #009CD4;
     text-align: center;
@@ -106,5 +123,4 @@ button[type="submit"]:hover {
     gap: 20px;
     width: 425px;
 }
-
 </style>

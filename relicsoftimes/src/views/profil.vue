@@ -1,11 +1,15 @@
 <script setup>
+
     import userProfil from '@/components/login.vue';
 </script>
 <template>
-    <userProfil/>
+    <div id="pageProfil">
+        <userProfil/>
+    </div>
+    
 </template>
 <style>
-    body {
+    #pageProfil {
     margin: 0;
     font-family: 'Segoe UI', sans-serif;
     background-image: url('../assets/fondLogin.svg');

@@ -37,9 +37,9 @@ h1{
   border: 2px solid #009CD4;
   color: #ffffff;
 }
-.container {
+/* .container {
 margin-top: 20vh;
-}
+} */
 @font-face {
   font-family: 'Elegante Classica';
   src: url('@/assets/fonts/Elegante Classica.ttf') format('truetype');

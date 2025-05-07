@@ -10,7 +10,7 @@
           <h2>{{ randomDessin.nom }}</h2>
           <!-- <img :src="randomDessin.image" :alt="randomDessin.nom" width="150" /> -->
           <div >
-            <img id="carte"src="../assets/image.jpg" alt="">
+            <img id="carte"src="../assets/image.jpg" alt="carte de jeu" />
           </div>
   
         </div>

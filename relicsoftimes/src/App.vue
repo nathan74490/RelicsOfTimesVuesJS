@@ -13,19 +13,8 @@ import HomeView from './views/HomeView.vue'
     <div id="containt">
       <RouterView/>
     </div>
-    
-
-
-
-
-
-
-
-
     <thefooter />
   </body>
-
-    <!-- <RouterView /> -->
 </template>
 
 <style scoped>

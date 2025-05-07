@@ -1,38 +1,41 @@
 <template>
-    <div id="container" class="container">
+    <div id="containerLogin" >
         <div></div>
-        <div>
-        <h3 id="seconnecter">Se connecter</h3>
-        <div id="form">
-            
-            <form class="formulaire">
-                <input type="email" id="email" placeholder="Mail" name="email" required>
-                <input type="password" id="password" placeholder="Mot de passe" name="password" required>
-                <a href="#" id="motDePasseOubilie">Mot de passe oublié</a>
-                <button type="submit">Se connecter</button>
-                <RouterLink id="register" to="/register">Créer un compte</RouterLink>
-            </form>
+        <div id="formlog">
+            <h3 id="seconnecter">Se connecter</h3>
+            <div id="formLogin">
+
+                <form class="formulaire">
+                    <input type="email" id="email" placeholder="Mail" name="email" required>
+                    <input type="password" id="password" placeholder="Mot de passe" name="password" required>
+                    <a href="#" id="motDePasseOubilie">Mot de passe oublié</a>
+                    <button type="submit">Se connecter</button>
+                    <RouterLink id="register" to="/register">Créer un compte</RouterLink>
+                </form>
+            </div>
         </div>
-    </div>
-        
+
     </div>
 
 </template>
 <style>
-    /* body {
+/* body {
     margin: 0;
     font-family: 'Segoe UI', sans-serif;
     background-image: url('../assets/fondLogin.svg');
     color: white;
     min-height: 100vh;
 } */
-#container {
+#containerLogin {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
     gap: 30vw;
-
+    /* margin-top: 20vh; */
+}
+#formlog{
+    margin-top: 20vh;
 }
 #fondLogin {
     position: absolute;
@@ -43,7 +46,8 @@
     z-index: -1;
     /* opacity: 0.5; */
 }
-#seconnecter{
+
+#seconnecter {
     font-family: 'Elegante Classica', sans-serif;
     font-size: 70px !important;
     text-align: center;
@@ -53,7 +57,7 @@
     letter-spacing: 2px;
 }
 
-#form {
+#formLogin {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -70,14 +74,17 @@
     gap: 20px;
     width: 425px;
 }
-#motDePasseOubilie{
+
+#motDePasseOubilie {
     align-self: flex-end;
     font-size: 20px;
 }
-#register{
+
+#register {
     align-self: center;
     font-size: 24px;
 }
+
 label {
     font-weight: 500;
     margin-bottom: 5px;
@@ -92,7 +99,7 @@ input[type="password"] {
     border-radius: 50px;
     background-color: transparent;
     color: #ccc;
-    font-size: 24px ;
+    font-size: 24px;
 }
 
 input::placeholder {
@@ -116,5 +123,4 @@ button[type="submit"]:hover {
     background-color: white;
     color: black;
 }
-
 </style>

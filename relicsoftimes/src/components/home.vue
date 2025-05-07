@@ -12,17 +12,17 @@ import { RouterLink, RouterView } from 'vue-router'
     <section id="productPersonalise">
         <img id="card2" src="../assets/cards2.png" alt="Cartes du jeu Relics Of Times" />
         <div id="divDesc">
-          <p id="textDesc">Tout le monde a vécu une enfance, et nous ressentons tous une certaine nostalgie en nous remémorant les moments marquants de cette période. C’est pourquoi nous avons décidé de créer un jeu dans le style de Trivial Pursuit, mais centré sur ce qui a marqué notre enfance : des jouets, des dessins animés, etc. L’objectif de ce projet est de raviver les souvenirs d’enfance des joueurs.</p>
+          <p id="textDesc">Tout le monde a vécu une enfance, et nous ressentons tous une certaine nostalgie en nous remémorant les moments marquants de cette période. C’est pourquoi nous avons décidé de créer un jeu dans le style de Trivial Pursuit, mais centré sur ce qui a marqué notre enfance : des jouets, des dessins animés, etc.L’objectif de ce projet est de raviver les souvenirs d’enfance des joueurs.</p>
           <RouterLink class="buttonPersonalise" style="width: 55%;" to="#">Personnaliser</RouterLink>
         </div>
     </section>
     <section id="about">
         <img id="card3" src="../assets/cards3.png" alt="Cartes du jeu Relics Of Times" />
         <div id="divAbout">
-          <p id="textAbout">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+          <p class="textAbout">Pour jouer c’est très simple, il vous faut minimum 4 personnes qui aiment et qui sont prêts à tout pour gagner. </p>
+          <p class="textAbout">Chaque équipe ( de 2 membres minimum ) a 1 min pour faire deviner un maximum de cartes.
+            La méthode utilisée est au choix parmi les 3 suivantes : chanter / mimer / mots clés. </p>
+          <p class="textAbout">Suivant la catégorie sur laquelle vous tombez, vous pouvez gagner plus de points selon la méthode choisie.</p>
           <RouterLink class="buttonPersonalise" style="width: 55%;" to="/play">Tester le jeu</RouterLink>
         </div>
     </section>
@@ -199,7 +199,7 @@ import { RouterLink, RouterView } from 'vue-router'
         color: #fff;
       }
 
-      #textAbout {
+      .textAbout {
         font-size: 3vw;
         text-align: justify-all;
       }
