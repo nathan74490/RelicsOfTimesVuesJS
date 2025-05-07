@@ -1,5 +1,9 @@
 <template>
-  <section id="pageShoppingCart">
+  <div>
+    <div id="orderBackground"></div>
+    <div id="orderDone">
+      <img id="orderDoneBox" src="../assets/endOrder.svg" alt="" />
+    </div>
     <section id="order">
       <h1>VOTRE COMMANDE</h1>
       <div id="container">
@@ -15,14 +19,14 @@
           </div>
           <div class="info">
             <p class="infosLabel">Quantité :</p>
-            <input type="number" max="10" placeholder="1" required>
+            <input type="number" max="10" placeholder="1" required />
           </div>
           <div class="info">
             <p class="infosLabel">Prix :</p>
             <p class="infos">9999€</p>
           </div>
         </div>
-        <img id="cards" src="../assets/cardsOrder.png">
+        <img id="cards" src="../assets/cardsOrder.png" />
         <div></div>
       </div>
     </section>
@@ -37,23 +41,23 @@
         <input class="radio" type="radio" value="Visa" name="paiement" />
       </div>
       <div id="orderInfo">
-        <form>
+        <form id="orderForm">
           <div id="cardInfo">
             <label class="label">Adresse :</label>
-            <input type="text" class="textInput" placeholder="adresse" required>
+            <input type="text" class="textInput" placeholder="adresse" required />
             <label class="label">Nom du titulaire :</label>
-            <input type="text" class="textInput" placeholder="nom du titulaire" required>
+            <input type="text" class="textInput" placeholder="nom du titulaire" required />
             <label class="label">Numéro de carte :</label>
-            <input type="text" class="textInput" maxlength="16" placeholder="XXXX XXXX XXXX XXXX" required>
+            <input type="text" class="textInput" maxlength="16" placeholder="XXXX XXXX XXXX XXXX" required />
           </div>
           <div id="cardNumber">
             <div class="cNumber">
               <label class="label">Date d'expiration</label>
-              <input type="text" class="numberInput" maxlength="5" placeholder="XX/XX" required>
+              <input type="text" class="numberInput" maxlength="5" placeholder="XX/XX" required />
             </div>
             <div class="cNumber">
               <label class="label">CVC</label>
-              <input type="text" class="numberInput" maxlength="3" placeholder="XXX" required>
+              <input type="text" class="numberInput" maxlength="3" placeholder="XXX" required />
             </div>
           </div>
           <div class="submitOrder">
@@ -62,163 +66,186 @@
         </form>
       </div>
     </section>
-  </section>
+  </div>
 </template>
+
+<script setup lang="ts">
+import { onMounted } from 'vue'
+
+onMounted(() => {
+  const orderBox = document.getElementById('orderDone') as HTMLElement
+  const orderBackground = document.getElementById('orderBackground') as HTMLElement
+  const form = document.getElementById('orderForm') as HTMLFormElement
+
+  if (form && orderBox && orderBackground) {
+    form.addEventListener('submit', function (event) {
+      event.preventDefault()
+      orderBox.style.display = 'flex'
+      orderBackground.style.display = 'flex'
+    })
+  }
+})
+</script>
+
 <style>
-#pageShoppingCart {
-  color: white;
-  background-image: url("../assets/fond_registeur.svg");
-}
+  body {
+    color: white;
+    background-image: url("../assets/fond_registeur.svg");
+  }
+  h1 {
+    color: white;
+    margin-top: 15vh;
+    font-family: "Relics Of Times";
+  }
+  #order {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2vh;
+    width: 100vw;
+  }
+  #cart {
+    margin-bottom: 5vh;
+  }
+  #container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+  #cards {
+    width: 35%;
+    height: 35%;
+  }
+  #orderInfo {
+    color: #ffffff;
+    padding-right: 25vw;
+    padding-left: 25vw;
+  }
+  #cardInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  #cardNumber {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
 
-h1 {
-  color: white;
-  margin-top: 15vh;
-  font-family: "Relics Of Times";
-}
+  #orderBackground {
+    display: none;
+    z-index: 998;
+    position: absolute;
+    width: 100vw;
+    height: 120vh;
+    background-color: black;
+    opacity: 0.8;
+  }
+  #orderDone {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    z-index: 999;
+  }
+  #orderDoneBox {
+    width: 30vw;
+    height: 40vh;
+  }
 
-#order {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 2vh;
-  width: 100vw;
+  .textInput {
+    width: 100%;
+    height: 40px;
+    background-color: transparent;
+    color: white;
+    border: 3px solid #ffffff;
+    border-radius: 8px;
+  }
+  .numberInput {
+    width: 100%;
+    height: 40px;
+    background-color: transparent;
+    color: white;
+    border: 3px solid #ffffff;
+    border-radius: 8px;
+  }
+  .cNumber {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 20vw;
+  }
+  #information {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1vh;
+    width: 30vw;
+  }
+  .infos {
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    color: white;
+    text-align: left;
+    width: 100%;
+    height: 40px;
+    font-size: 20px;
+    border-radius: 8px;
+    border: 3px solid #ffffff;
+    padding-left: 1vw;
+  }
+  .infosLabel {
+    color: #ffffff;
+  }
+  .info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+  }
+  #buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  h3 {
+    text-align: center;
+    font-family: "Relics Of Times";
+  }
+  .radio {
+    z-index: 1;
+    height: 2vh;
+    width: 5vw;
+    background-color: #ffffff;
+    border: 3px solid #009CD4;
+    border-radius: 8px;
+  }
+  .submitOrder {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 2vh;
+  }
+  input, textarea {
+    padding-left: 1vh;
+  }
 
-}
-
-/* #cart {
-  margin-bottom: 5vh;
-} */
-
-#container {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-}
-
-#cards {
-  width: 35%;
-  height: 35%;
-}
-
-#orderInfo {
-  color: #ffffff;
-  padding-right: 25vw;
-  padding-left: 25vw;
-}
-
-#cardInfo {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-}
-
-#cardNumber {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.textInput {
-  width: 100%;
-  height: 40px;
-  background-color: transparent;
-  color: white;
-  border: 3px solid #ffffff;
-  border-radius: 8px;
-}
-
-.numberInput {
-  width: 100%;
-  height: 40px;
-  background-color: transparent;
-  color: white;
-  border: 3px solid #ffffff;
-  border-radius: 8px;
-}
-
-.cNumber {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  width: 20vw;
-}
-
-#information {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 1vh;
-  width: 30vw;
-}
-
-.infos {
-  display: flex;
-  align-items: center;
-  background-color: transparent;
-  color: white;
-  text-align: left;
-  width: 100%;
-  height: 40px;
-  font-size: 20px;
-  border-radius: 8px;
-  border: 3px solid #ffffff;
-  padding-left: 1vw;
-}
-
-.infosLabel {
-  color: #ffffff;
-}
-
-.info {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  width: 100%;
-}
-
-#buttons {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-}
-
-h3 {
-  text-align: center;
-  font-family: "Relics Of Times";
-}
-
-.radio {
-  z-index: 999;
-  height: 2vh;
-  width: 5vw;
-  background-color: #ffffff;
-  border: 3px solid #009CD4;
-  border-radius: 8px;
-}
-
-.submitOrder {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  margin-top: 2vh;
-}
-
-input,
-textarea {
-  padding-left: 1vh;
-}
 </style>
 <script setup lang="ts">
 </script>

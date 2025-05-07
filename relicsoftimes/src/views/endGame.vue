@@ -9,7 +9,7 @@ import {RouterLink} from "vue-router";
       <img id="imgResult" src="../assets/gamePromo.png">
       <h1 id="promoText">-20%</h1>
     </section>
-    <RouterLink class="buttonPersonalise button" style="width: 55%;" to="#">Je passe commande</RouterLink>
+    <RouterLink class="buttonPersonalise button" style="width: 55%;" to="shoppingCart">Je passe commande</RouterLink>
   </div>
 </template>
 
