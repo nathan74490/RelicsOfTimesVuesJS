@@ -76,12 +76,15 @@ onMounted(() => {
   const orderBox = document.getElementById('orderDone') as HTMLElement
   const orderBackground = document.getElementById('orderBackground') as HTMLElement
   const form = document.getElementById('orderForm') as HTMLFormElement
+  const body = document.querySelector('body') as HTMLElement
 
   if (form && orderBox && orderBackground) {
     form.addEventListener('submit', function (event) {
       event.preventDefault()
       orderBox.style.display = 'flex'
       orderBackground.style.display = 'flex'
+      body.style.overflow = 'hidden'
+      window.scrollTo(0, 0)
     })
   }
 })
