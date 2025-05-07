@@ -19,16 +19,24 @@ function addToCart() {
   <section id="home">
     <img id="card1" src="../assets/cards1.png" alt="Cartes du jeu Relics Of Times" />
     <h1 id="title">Relics Of Times</h1>
+    <div id="divDesc">
+      <p>Revivez vos plus beaux souvenirs d’enfance le temps d’un jeu.</p>
+    <RouterLink class="buttonPersonalise" style="width: 55%;" to="/play">Tester le jeu</RouterLink>
+    </div>
+    
     <!--       <RouterLink to="/play" id="buttonTest">test du jeu</RouterLink>-->
     <!-- <a href="doYouWantToPlay.html"></a> -->
   </section>
   <section id="productPersonalise">
     <img id="card2" src="../assets/cards2.png" alt="Cartes du jeu Relics Of Times" />
     <div id="divDesc">
-      <p id="textDesc">Tout le monde a vécu une enfance, et nous ressentons tous une certaine nostalgie en nous
-        remémorant les moments marquants de cette période. C’est pourquoi nous avons décidé de créer un jeu dans le
-        style de Trivial Pursuit, mais centré sur ce qui a marqué notre enfance : des jouets, des dessins animés,
-        etc.L’objectif de ce projet est de raviver les souvenirs d’enfance des joueurs.</p>
+      <p class="textDesc">Tout le monde a vécu une enfance, et nous éprouvons tous une certaine nostalgie en repensant aux
+        moments marquants de cette période.</p>
+
+      <p class="textDesc">C’est pourquoi nous avons décidé de créer un jeu inspiré du célèbre Trivial Pursuit, centré sur
+        ce qui a bercé notre enfance : jouets, dessins animés, séries cultes, et bien plus encore.</p>
+
+      <p class="textDesc">L’objectif de ce projet est de raviver chez les joueurs leurs plus beaux souvenirs d’enfance.</p>
       <RouterLink class="buttonPersonalise" style="width: 55%;" to="#">Personnaliser</RouterLink>
     </div>
   </section>
@@ -44,8 +52,8 @@ function addToCart() {
       <div id="btnBasPageAcce">
         <RouterLink class="buttonPersonalise" style="width: 55%;" to="/play">Tester le jeu</RouterLink>
         <button class="buttonPersonalise" style="width: 55%; margin-top: 10px;" @click="addToCart">
-  Ajouter au panier
-</button>
+          Ajouter au panier
+        </button>
       </div>
 
     </div>
@@ -61,6 +69,7 @@ function addToCart() {
   height: 100vh;
   width: 100vw;
   background-color: #131313;
+  color: #fff;
 }
 
 #title {
@@ -158,13 +167,22 @@ function addToCart() {
   width: 100vw;
   background-color: #000000;
 }
-#btnBasPageAcce{
+
+#btnBasPageAcce {
   display: flex;
   flex-direction: row;
   justify-content: center;
   /* align-items: center; */
   gap: 1vh;
   width: 25vw;
+}
+.textDesc {
+  font-family: "Alatsi", sans-serif;
+  font-size: 20px;
+  text-align: end;
+}
+.textAbout{
+  font-size: 20px;
 }
 
 @media screen and (max-width: 800px) {
@@ -187,7 +205,7 @@ function addToCart() {
     left: 5vw;
   }
 
-  #textDesc {
+  .textDesc {
     font-size: 3vw;
     text-align: justify-all;
   }
