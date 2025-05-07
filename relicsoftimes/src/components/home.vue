@@ -29,7 +29,7 @@ function addToCart() {
   </section>
   <section id="productPersonalise">
     <img id="card2" src="../assets/cards2.png" alt="Cartes du jeu Relics Of Times" />
-    <div id="divDesc">
+    <div id="dviinfohome">
       <p class="textDesc">Tout le monde a vécu une enfance, et nous éprouvons tous une certaine nostalgie en repensant aux
         moments marquants de cette période.</p>
 
@@ -71,7 +71,12 @@ function addToCart() {
   background-color: #131313;
   color: #fff;
 }
-
+#dviinfohome{
+  position: absolute;
+  z-index: 99;
+  white-space: nowrap;
+  left: 5vw;
+}
 #title {
   font-family: "Relics Of Times";
   position: absolute;
