@@ -20,6 +20,7 @@
                 <p class="infos">Adresse :</p>
                 <p class="infosProfile">Adresse</p>
               </div>
+              <button class="buttonPersonalise">Modifier</button>
             </div>
         </div>
      </div>
@@ -68,6 +69,9 @@
 }
 .infos {
   color: #ffffff;
+}
+.buttonPersonalise {
+  width: 100%;
 }
 
 h1 {
