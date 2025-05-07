@@ -1,57 +1,115 @@
 <template>
-    <div id="pageregisteur">
-        <div id="containerRegisteur">
-            <div id="titleRgister">
-                <h1>Créer mon compte</h1>
-            </div>
-            
-            <div class="info_profil">
+  <div id="boxAccountCreated">
+    <img id="boxAccountCreatedBox" src="../assets/createdScreen.svg" alt="">
+  </div>
+  <div id="pageregisteur">
+    <div id="containerRegisteur">
+      <div id="titleRgister">
+        <h1>Créer mon compte</h1>
+      </div>
+
+      <div class="info_profil">
 
 
-                <div id="formRgister">
-                    <form class="formulaire">
+        <div id="formRgister">
+          <form class="formulaire">
 
-                        <input type="text" id="nom" placeholder="Nom" name="nom" required>
-
-
-                        <input type="text" id="prenom" placeholder="Prenom" name="prenom" required>
+            <input type="text" id="nom" placeholder="Nom" name="nom" required>
 
 
-                        <input type="email" id="email" placeholder="Email" name="email" required>
+            <input type="text" id="prenom" placeholder="Prenom" name="prenom" required>
 
 
-                        <input type="password" id="password" placeholder="Mot de passe" name="password" required>
+            <input type="email" id="email" placeholder="Email" name="email" required>
 
 
-                        <button type="submit">Créer le compte</button>
-                    </form>
-                </div>
-            </div>
+            <input type="password" id="password" placeholder="Mot de passe" name="password" required>
+
+
+            <button type="submit">Créer le compte</button>
+          </form>
         </div>
+      </div>
     </div>
+  </div>
 </template>
+<script setup lang="ts">
+import { onMounted } from 'vue'
+import { useRouter } from 'vue-router';
+
+const router = useRouter();
+
+
+onMounted(() => {
+  const container = document.querySelector('.containerRegisteur') as HTMLElement
+  const boxAccountCreated = document.getElementById('boxAccountCreated') as HTMLElement
+  const form = document.querySelector('.formulaire') as HTMLFormElement
+
+  if (form && container && boxAccountCreated) {
+    form.addEventListener('submit', function (event) {
+      event.preventDefault()
+      container.style.display = 'none'
+      boxAccountCreated.style.display = 'flex'
+      setTimeout(function () {
+        router.push('/userprofil')
+      }, 2000)
+    })
+  }
+})
+</script>
+
 <style>
-#pageregisteur {
+ body {
     margin: 0;
     font-family: 'Segoe UI', sans-serif;
     background-image: url('../assets/fondLogin.svg');
+    /* background-color: rgba(1, 1, 1, 0.644); */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    /* background: radial-gradient(circle at bottom left, #1a1a1a, #000000); */
     color: white;
     min-height: 100vh;
 }
+
+ #boxAccountCreated {
+   display: none;
+   z-index: 999;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   position: absolute;
+   width: 100vw;
+   height: 100vh;
+ }
+
+ #boxAccountCreatedBox {
+   width: 30vw;
+   height: 40vh;
+ }
+
+ #pageregisteur {
+   margin: 0;
+   font-family: 'Segoe UI', sans-serif;
+   background-image: url('../assets/fondLogin.svg');
+   background-size: cover;
+   background-position: center;
+   background-repeat: no-repeat;
+   color: white;
+   min-height: 100vh;
+ }
 #containerRegisteur {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    /* gap: 10vh; */
-    /* margin-top: 20vh; */
-}
-#titleRgister {
-    margin-top: 20vh;
-}
+   display: flex;
+   flex-direction: column;
+   justify-content: space-evenly;
+   align-items: center;
+   /* gap: 10vh; */
+   /* margin-top: 20vh; */
+ }
+ #titleRgister {
+   margin-top: 20vh;
+ }
+
 .info_profil {
     display: flex;
     flex-direction: row;
@@ -78,7 +136,6 @@ h1 {
     align-items: center;
     /* margin-top: 40px; */
 }
-
 input[type="email"],
 input[type="text"],
 input[type="password"] {
@@ -87,13 +144,11 @@ input[type="password"] {
     border-radius: 50px;
     background-color: transparent;
     color: #ccc;
-    font-size: 24px;
+    font-size: 24px ;
 }
-
 input::placeholder {
     padding-left: 1vw;
 }
-
 button[type="submit"] {
     background-color: #009CD4;
     text-align: center;
@@ -123,4 +178,5 @@ button[type="submit"]:hover {
     gap: 20px;
     width: 425px;
 }
+
 </style>
