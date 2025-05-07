@@ -16,7 +16,7 @@
                     style="min-width: 200px;max-width: 427px; min-height: 200px; max-height: 542px; z-index: 1000; position: absolute; align-self: center;"
                     v-if="selectedLogo" />
             </div>
-            <MenuPagePersonnaliser @select="handleSelection" />
+            <MenuPagePersonnaliser @select="handleSelection" @addToCart="addToCart" />
         </div>
         <div v-if="activeCarousel === 'colors'">
             <ScrollCarousel :colors="colors" @colorSelected="handleColorSelection" />
@@ -75,8 +75,19 @@ const selectedLogo = ref(defaultLogo)
 function handleLogoSelected(logo) {
     selectedLogo.value = logo
 }
+import { useCartStore } from '@/stores/cart'
 
+const cartStore = useCartStore()
 
+function addToCart() {
+  cartStore.addToCart({
+    id: Date.now(),
+    custom: "Carte personnalisée",
+    delivery: "20/05/2025",
+    price: 39.99
+  })
+  alert("Produit ajouté au panier !")
+}
 </script>
 <style>
 body {

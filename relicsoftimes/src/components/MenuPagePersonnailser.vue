@@ -2,12 +2,12 @@
     <div id="menu">
       <nav @click="emit('select', 'colors')">couleur fond</nav>
       <nav @click="emit('select', 'images')">logo</nav>
-      <nav @click="emit('select', 'home')">retour accueil</nav>
+      <nav @click="emit('addToCart')">Ajouter au panier</nav>
     </div>
   </template>
   
   <script setup>
-  const emit = defineEmits(['select'])
+  const emit = defineEmits(['select', 'addToCart'])
   </script>
   
   <style scoped>

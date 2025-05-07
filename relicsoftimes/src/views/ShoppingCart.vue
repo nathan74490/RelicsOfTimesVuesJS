@@ -1,94 +1,111 @@
 <template>
   <div>
-    <div id="orderBackground"></div>
-    <div id="orderDone">
-      <img id="orderDoneBox" src="../assets/endOrder.svg" alt="" />
+    <div id="orderBackground" v-if="orderDone"></div>
+    <div id="orderDone" v-if="orderDone">
+      <img id="orderDoneBox" src="../assets/endOrder.svg" alt="Commande terminée" />
     </div>
+
     <section id="order">
       <h1>VOTRE COMMANDE</h1>
-      <div id="container">
+      <div v-if="cart.length === 0" style="text-align: center; color: white;">
+        Votre panier est vide.
+      </div>
+      <div v-for="(item, index) in cart" :key="item.id" id="container">
         <div></div>
         <div id="information">
           <div class="info">
             <p class="infosLabel">Info personnalisation :</p>
-            <p class="infos">Lorem ipsum blablablabla</p>
+            <p class="infos">{{ item.custom || "—" }}</p>
           </div>
           <div class="info">
             <p class="infosLabel">Date de livraison :</p>
-            <p class="infos">Lorem ipsum blablablabla</p>
+            <p class="infos">{{ item.delivery || "—" }}</p>
           </div>
           <div class="info">
             <p class="infosLabel">Quantité :</p>
-            <input type="number" max="10" placeholder="1" required />
+            <input type="number" v-model.number="item.quantity" @input="updateTotal" min="1" max="10" required />
           </div>
           <div class="info">
             <p class="infosLabel">Prix :</p>
-            <p class="infos">9999€</p>
+            <p class="infos">{{ item.price * item.quantity }}€</p>
           </div>
+          <button @click="removeItem(index)" class="buttonPersonalise">Supprimer</button>
         </div>
         <img id="cards" src="../assets/cardsOrder.png" />
         <div></div>
       </div>
     </section>
-    <section id="cart">
+
+    <section id="cart" v-if="cart.length">
       <h3>Mode de paiement</h3>
       <div id="buttons">
         <label>Carte</label>
-        <input class="radio" type="radio" value="Carte" name="paiement" checked />
+        <input class="radio" type="radio" value="Carte" v-model="paymentMethod" />
         <label>Paypal</label>
-        <input class="radio" type="radio" value="Paypal" name="paiement" />
+        <input class="radio" type="radio" value="Paypal" v-model="paymentMethod" />
         <label>Visa</label>
-        <input class="radio" type="radio" value="Visa" name="paiement" />
+        <input class="radio" type="radio" value="Visa" v-model="paymentMethod" />
       </div>
+
       <div id="orderInfo">
-        <form id="orderForm">
+        <form id="orderForm" @submit.prevent="checkout">
           <div id="cardInfo">
             <label class="label">Adresse :</label>
-            <input type="text" class="textInput" placeholder="adresse" required />
+            <input type="text" class="textInput" v-model="address" required />
             <label class="label">Nom du titulaire :</label>
-            <input type="text" class="textInput" placeholder="nom du titulaire" required />
+            <input type="text" class="textInput" v-model="cardName" required />
             <label class="label">Numéro de carte :</label>
-            <input type="text" class="textInput" maxlength="16" placeholder="XXXX XXXX XXXX XXXX" required />
+            <input type="text" class="textInput" maxlength="16" v-model="cardNumber" required />
           </div>
-          <div id="cardNumber">
-            <div class="cNumber">
-              <label class="label">Date d'expiration</label>
-              <input type="text" class="numberInput" maxlength="5" placeholder="XX/XX" required />
-            </div>
-            <div class="cNumber">
-              <label class="label">CVC</label>
-              <input type="text" class="numberInput" maxlength="3" placeholder="XXX" required />
-            </div>
-          </div>
-          <div class="submitOrder">
-            <input class="buttonPersonalise" type="submit" value="Payer Maintenant" />
-          </div>
+          <h2>Total : {{ total }}€</h2>
+          <button type="submit" class="buttonPersonalise">Passer la commande</button>
         </form>
       </div>
     </section>
   </div>
 </template>
 
-<script setup lang="ts">
-import { onMounted } from 'vue'
+<script setup>
+import { ref, computed } from 'vue'
+import { useCartStore } from '@/stores/cart'
 
-onMounted(() => {
-  const orderBox = document.getElementById('orderDone') as HTMLElement
-  const orderBackground = document.getElementById('orderBackground') as HTMLElement
-  const form = document.getElementById('orderForm') as HTMLFormElement
+const cartStore = useCartStore()
 
-  if (form && orderBox && orderBackground) {
-    form.addEventListener('submit', function (event) {
-      event.preventDefault()
-      orderBox.style.display = 'flex'
-      orderBackground.style.display = 'flex'
-    })
-  }
+const cart = cartStore.items
+const address = ref('')
+const cardName = ref('')
+const cardNumber = ref('')
+const paymentMethod = ref('Carte')
+const orderDone = ref(false)
+
+const total = computed(() => {
+  return cart.reduce((sum, item) => sum + item.price * item.quantity, 0)
 })
+
+function updateTotal() {
+  // la valeur total est déjà calculée automatiquement avec computed
+}
+
+function removeItem(index) {
+  cartStore.removeFromCart(index)
+}
+
+function checkout() {
+  if (address.value && cardName.value && cardNumber.value) {
+    alert('Commande confirmée !')
+    cartStore.clearCart()
+    orderDone.value = true
+  } else {
+    alert('Veuillez remplir toutes les informations de paiement.')
+  }
+}
 </script>
 
+
+
+
 <style>
-  body {
+body {
     color: white;
     background-image: url("../assets/fond_registeur.svg");
   }
@@ -246,6 +263,6 @@ onMounted(() => {
     padding-left: 1vh;
   }
 
+  
+
 </style>
-<script setup lang="ts">
-</script>
