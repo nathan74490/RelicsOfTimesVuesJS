@@ -85,6 +85,8 @@ header {
     justify-content: space-around;
     align-items: center;
     gap: 1rem;
+    z-index: 99;
+    top: 0;
     width: 100%;
     background-color: transparent;
     max-height: 10.9vh;

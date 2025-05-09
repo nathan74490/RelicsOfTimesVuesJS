@@ -17,19 +17,16 @@ function addToCart() {
 
 <template>
   <section id="home">
-    <img id="card1" src="../assets/cards1.png" alt="Cartes du jeu Relics Of Times" />
-    <h1 id="title">Relics Of Times</h1>
     <div id="divDesc">
+      <h1 id="title">Relics Of Times</h1>
       <p>Revivez vos plus beaux souvenirs d’enfance le temps d’un jeu.</p>
-    <RouterLink class="buttonPersonalise" style="width: 55%;" to="/play">Tester le jeu</RouterLink>
+    <RouterLink class="buttonPersonalise" style="width: 15vw;" to="/play">Tester le jeu</RouterLink>
     </div>
-    
-    <!--       <RouterLink to="/play" id="buttonTest">test du jeu</RouterLink>-->
-    <!-- <a href="doYouWantToPlay.html"></a> -->
+
   </section>
   <section id="productPersonalise">
-    <img id="card2" src="../assets/cards2.png" alt="Cartes du jeu Relics Of Times" />
     <div id="dviinfohome">
+      <h2>Personnalisez vos cartes</h2>
       <p class="textDesc">Tout le monde a vécu une enfance, et nous éprouvons tous une certaine nostalgie en repensant aux
         moments marquants de cette période.</p>
 
@@ -61,35 +58,68 @@ function addToCart() {
 </template>
 
 <style>
+/*---------------------------------------------*/
 #home {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
   height: 100vh;
   width: 100vw;
-  background-color: #131313;
+  background-image: url("../assets/cards1.png");
+  background-size: cover;
+  justify-content: center;
   color: #fff;
-}
-#dviinfohome{
-  position: absolute;
-  z-index: 99;
-  white-space: nowrap;
-  left: 5vw;
+  gap: 1vh;
 }
 #title {
   font-family: "Relics Of Times";
-  position: absolute;
-  z-index: 99;
   font-size: 5vw;
   color: #fff;
-  white-space: nowrap;
-  left: 5vw;
 }
+#divDesc {
+  margin-left: 5vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* align-items: flex-end; */
+  gap: 5vh;
+  /* width: 25vw; */
+  color: #fff;
+}
+p#divDesc {
+  font-size: 24px;
+  text-align: justify;
+  color: #fff;
+}
+/*---------------------------------------------*/
+#productPersonalise {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  height: 100vh;
+  width: 100vw;
+  background-image: url("../assets/cards2.png");
+  background-size: cover;
+}
+#dviinfohome{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 1vh;
+  margin-right: 5vw;
+  font-size: 24px;
+  /* text-align: justify; */
+  width: 25vw;
+  color: #fff;
+}
+
 
 #card1 {
   height: 100%;
   width: 100%;
+  position: absolute;
+  z-index: 0;
 }
 
 #card2 {
@@ -102,19 +132,7 @@ function addToCart() {
   width: 100%;
 }
 
-#divDesc {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-end;
-  position: absolute;
-  gap: 1vh;
-  right: 5vw;
-  font-size: 24px;
-  text-align: justify;
-  width: 25vw;
-  color: #fff;
-}
+
 
 #divAbout {
   display: flex;
@@ -153,15 +171,7 @@ function addToCart() {
 
 }
 
-#productPersonalise {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  width: 100vw;
-  background-color: #000000;
-}
+
 
 #about {
   display: flex;
