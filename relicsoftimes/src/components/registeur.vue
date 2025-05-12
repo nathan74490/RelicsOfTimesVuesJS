@@ -41,7 +41,7 @@ const router = useRouter();
 
 
 onMounted(() => {
-  const container = document.querySelector('.containerRegisteur') as HTMLElement
+  const container = document.querySelector('#containerRegisteur') as HTMLElement
   const boxAccountCreated = document.getElementById('boxAccountCreated') as HTMLElement
   const form = document.querySelector('.formulaire') as HTMLFormElement
 
