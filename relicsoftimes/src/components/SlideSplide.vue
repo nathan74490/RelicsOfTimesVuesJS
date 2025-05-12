@@ -35,7 +35,7 @@ const animationDuration = 20 // en secondes – adapte la vitesse ici
   width: 100%;
   max-width: 100%;
   overflow: hidden;
-  margin: 2rem auto;
+  /* margin: 2rem auto; */
   position: relative;
 }
 
@@ -56,17 +56,17 @@ const animationDuration = 20 // en secondes – adapte la vitesse ici
 
 .slide {
   flex: 0 0 auto;
-  width: 25%;
-  padding: 0 0.5rem;
+  /* width: 25%; */
+  /* padding: 0 0.5rem; */
   box-sizing: border-box;
 }
 
 .slide img {
   width: 449px;
-  height: 336; 
-  object-fit: contain; 
+  height: 336px; 
+  object-fit: cover; 
   display: block;
-  border-radius: 10px;
+  /* border-radius: 10px; */
 }
 
 </style>

@@ -110,11 +110,6 @@ const router = createRouter({
       name: 'endGame',
       component: () => import('../views/endGame.vue'),
     },
-    {
-      path: '/test',
-      name: 'test',
-      component: () => import('../views/testslide.vue'),
-    }
   ],
 })
 

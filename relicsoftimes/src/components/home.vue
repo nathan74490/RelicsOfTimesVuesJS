@@ -24,7 +24,7 @@ function addToCart() {
     </div>
   </section>
   <div>
-    <div style="width: 100vw; padding: 2rem 0;">
+    <div style="width: 100vw;">
     <SlideSplide />
     </div>
   </div>
