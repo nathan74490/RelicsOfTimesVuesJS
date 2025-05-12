@@ -28,7 +28,7 @@
       </div>
   
   
-      <p v-if="response">Réponse : {{ response }}</p>
+      <div id="popup" v-if="response"><div  id="popuprespons">-{{ response }}%</div> </div>
   
     </div>
   </template>
@@ -77,8 +77,8 @@
   
   Ta mission est de me dire pour chaque mot s’il est pertinent (lié de manière évidente ou directe au dessin animé, par son univers, ses personnages, ses thèmes, etc.).
   Si le mot est pertinent, il rapporte 10 points, sinon 0 point.
-  Donne-moi pour chaque mot une réponse structurée ainsi :
-  Mot : [mot] – Pertinent : [Oui / Non] – Points : [0 ou 10] – Justification : [courte explication]
+  Donne-moi une réponse structurée ainsi :
+  retounre moi uniquement le total de points
   si les mots animes sont nul retourne moi "aucun mot a ete trouve"
   
   Voici les données :
@@ -185,6 +185,29 @@
     border-color: #4a90e2;
     box-shadow: 0 0 0 4px rgba(74, 144, 226, 0.2);
   }
-  
+  #popup{
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    z-index: 100;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+  }
+  #popuprespons{
+    position: absolute;;
+    width: 616px;
+    height: 494px;
+    z-index: 100;
+    background-image: url(../assets/gamePromo.png);
+    background-size:contain ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    
+  }
   
   </style>
