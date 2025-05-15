@@ -7,10 +7,10 @@
       <div class="container-dessin">
   
         <div v-if="randomDessin">
-          <h2>{{ randomDessin.nom }}</h2>
+          <!-- <h2>{{ randomDessin.nom }}</h2> -->
           <!-- <img :src="randomDessin.image" :alt="randomDessin.nom" width="150" /> -->
           <div >
-            <img id="carte"src="../assets/image.jpg" alt="carte de jeu" />
+            <img id="carte" :src= "randomDessin.image"  alt="carte de jeu" />
           </div>
   
         </div>

@@ -1,44 +1,43 @@
 {
     "dessins_animes": [
       {
-        "nom": "Les Razmoket",
-        "image": "https://upload.wikimedia.org/wikipedia/en/0/0d/Rugrats_cast.png"
+        "nom": "les bronzes font du ski",
+        "image": "/src/assets/CarteJeux/LES BRONZES 1.svg"
       },
       {
-        "nom": "Hé Arnold !",
-        "image": "https://upload.wikimedia.org/wikipedia/en/8/89/Hey_Arnold%21_title_card.png"
+        "nom": "Arthur et les Minimoys",
+        "image": "/src/assets/CarteJeux/ARTHUR 1.svg"
+      },{
+        "nom": "Avatar",
+        "image": "/src/assets/CarteJeux/AVATAR 1.svg"
       },
       {
-        "nom": "Les Supers Nanas",
-        "image": "https://upload.wikimedia.org/wikipedia/en/f/f4/The_Powerpuff_Girls_1998_title_card.png"
+        "nom": "Retour vers le futur",
+        "image": "/src/assets/CarteJeux/BACK TO THE FUTUR 1.svg"
+      },{
+        "nom": "E.T.",
+        "image": "/src/assets/CarteJeux/E.T 1.svg"
       },
       {
-        "nom": "Code Lyoko",
-        "image": "https://upload.wikimedia.org/wikipedia/en/f/fb/Code_Lyoko_logo.png"
+        "nom": "Fast and furious",
+        "image": "/src/assets/CarteJeux/F AND F 1.svg"
+      },{
+        "nom": "Forest Gump",
+        "image": "/src/assets/CarteJeux/FOREST GUMP 1.svg"
       },
       {
-        "nom": "Ed, Edd & Eddy",
-        "image": "https://upload.wikimedia.org/wikipedia/en/e/e3/Ed%2C_Edd_n_Eddy_title_card.jpg"
+        "nom": "Gladiator",
+        "image": "/src/assets/CarteJeux/GLADIATOR 1.svg"
+      },{
+        "nom": "Harry Potter",
+        "image": "/src/assets/CarteJeux/HARRY POTTER 1.svg"
       },
       {
-        "nom": "Les Animaniacs",
-        "image": "https://upload.wikimedia.org/wikipedia/en/5/5f/Animaniacs_-_Characters.png"
-      },
-      {
-        "nom": "Oggy et les Cafards",
-        "image": "https://upload.wikimedia.org/wikipedia/en/5/56/Oggy_and_the_Cockroaches_title_card.png"
-      },
-      {
-        "nom": "Totally Spies!",
-        "image": "https://upload.wikimedia.org/wikipedia/en/7/77/Totally_Spies%21_Logo.png"
-      },
-      {
-        "nom": "Les Aventures de Tintin",
-        "image": "https://upload.wikimedia.org/wikipedia/en/4/45/Adventures_of_Tintin_title_card.png"
-      },
-      {
-        "nom": "Dragon Ball Z",
-        "image": "https://upload.wikimedia.org/wikipedia/en/0/01/Dragon_Ball_Z_logo.png"
+        "nom": "Arthur et les Minimoys",
+        "image": "/src/assets/CarteJeux/ARTHUR 1.svg"
+      },{
+        "nom": "Titanic",
+        "image": "/src/assets/CarteJeux/TITANIC 1.svg"
       }
     ]
   }
