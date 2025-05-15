@@ -4,14 +4,22 @@ import { useCartStore } from '@/stores/cart' // importe ton store
 import SlideSplide from '@/components/SlideSplide.vue';
 const cartStore = useCartStore()
 
-function addToCart() {
+function addToCart(product) {
+  const originalPrice = product.originalPrice || product.price
+  const discount = product.discount || 0
+  const finalPrice = originalPrice - (originalPrice * discount / 100)
+
   cartStore.addToCart({
-    id: 1,
-    custom: "Jeu Relics Of Times",
-    delivery: "15/05/2025",
-    price: 29.99
+    id: Date.now(),
+    custom: product.custom || null,
+    delivery: product.delivery || "15/05/2025",
+    originalPrice: originalPrice,
+    discount: discount,
+    quantity: product.quantity || 1,
+    price: finalPrice.toFixed(2)
   })
-  alert("Produit ajouté au panier !")
+
+  alert(`Produit ajouté au panier${discount ? ` avec une réduction de ${discount}%` : ''}!`)
 }
 </script>
 
@@ -66,7 +74,7 @@ function addToCart() {
         Suivant la catégorie sur laquelle vous tombez, vous pouvez gagner plus de points selon la méthode choisie. </p>
       <div id="btnBasPageAcce">
         <RouterLink class="buttonPersonalise" style="width: 15vw;" to="/play">Tester le jeu</RouterLink>
-        <button class="buttonPersonalise" style="width: 15vw;" @click="addToCart">
+        <button class="buttonPersonalise" style="width: 15vw;" @click="addToCart({ custom: 'Produit classique', originalPrice: 29.99, quantity: 1 })">
           Ajouter au panier
         </button>
       </div>

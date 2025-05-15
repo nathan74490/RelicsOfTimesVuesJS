@@ -11,7 +11,6 @@
         Votre panier est vide.
       </div>
       <div v-for="(item, index) in cart" :key="item.id" id="container">
-        <div></div>
         <div id="information">
           <div class="info">
             <p class="infosLabel">Info personnalisation :</p>
@@ -26,13 +25,20 @@
             <input type="number" v-model.number="item.quantity" @input="updateTotal" min="1" max="10" required />
           </div>
           <div class="info">
-            <p class="infosLabel">Prix :</p>
-            <p class="infos">{{ item.price * item.quantity }}€</p>
+            <p class="infosLabel">Prix unitaire :</p>
+            <p class="infos">{{ item.originalPrice.toFixed(2) }}€</p>
+          </div>
+          <div class="info" v-if="item.discount">
+            <p class="infosLabel">Réduction :</p>
+            <p class="infos">-{{ item.discount }}%</p>
+          </div>
+          <div class="info">
+            <p class="infosLabel">Prix total :</p>
+            <p class="infos">{{ (item.price * item.quantity).toFixed(2) }}€</p>
           </div>
           <button @click="removeItem(index)" class="buttonPersonalise">Supprimer</button>
         </div>
         <img id="cards" src="../assets/cardsOrder.png" />
-        <div></div>
       </div>
     </section>
 
@@ -66,12 +72,11 @@
 </template>
 
 <script setup>
-import { ref, computed, onMounted } from 'vue'
+import { ref, computed } from 'vue'
 import { useCartStore } from '@/stores/cart'
 
 const cartStore = useCartStore()
-
-const cart = cartStore.items
+const cart = cartStore.cartItems
 const address = ref('')
 const cardName = ref('')
 const cardNumber = ref('')
@@ -79,15 +84,15 @@ const paymentMethod = ref('Carte')
 const orderDone = ref(false)
 
 const total = computed(() => {
-  return cart.reduce((sum, item) => sum + item.price * item.quantity, 0)
+  return cart.reduce((sum, item) => sum + item.price * item.quantity, 0).toFixed(2)
 })
 
 function updateTotal() {
-  // la valeur total est déjà calculée automatiquement avec computed
+  // computed gère déjà le total automatiquement
 }
 
 function removeItem(index) {
-  cartStore.removeFromCart(index)
+  cartStore.cartItems.splice(index, 1)
 }
 
 function checkout() {
@@ -100,9 +105,6 @@ function checkout() {
   }
 }
 </script>
-
-
-
 
 <style>
 body {

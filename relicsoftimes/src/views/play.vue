@@ -28,7 +28,7 @@
       </div>
   
   
-      <div id="popup" v-if="response"><img id="popuprespons" src="../assets/gamePromo.png" alt=""><div  id="textepopuprespons">- {{ response }}%</div> <button class="buttonPersonalise" style="width: 15vw; z-index: 110; margin-top: 50vh;" @click="addToCart">
+      <div id="popup" v-if="response"><img id="popuprespons" src="../assets/gamePromo.png" alt=""><div  id="textepopuprespons">- {{ response }}</div> <button class="buttonPersonalise" style="width: 15vw; z-index: 110; margin-top: 50vh;" @click="addToCart">
           Ajouter au panier
         </button></div>
   
@@ -36,77 +36,85 @@
   </template>
   
 <script setup>
-  import { ref, onMounted } from 'vue'
-  import { sendPrompt } from '@/services/openai'
-  import { useCartStore } from '@/stores/cart' // importe ton store
-  const dessinsAnimes = ref([])
-  const randomDessin = ref(null)
-  
-  onMounted(async () => {
-    const response = await fetch('/json/cart.json')
-    const data = await response.json()
-    dessinsAnimes.value = data.dessins_animes
-    getRandomDessin() // On choisit un aléatoire dès le départ
-  })
-  
-  function getRandomDessin() {
-    if (dessinsAnimes.value.length > 0) {
-      const index = Math.floor(Math.random() * dessinsAnimes.value.length)
-      randomDessin.value = dessinsAnimes.value[index]
-    }
-  }
-  
-  
-  // Champs saisis par l'utilisateur
-  const champ1 = ref('')
-  const champ2 = ref('')
-  const champ3 = ref('')
-  const champ4 = ref('')
-  
-  // Réponse de l'API
-  const response = ref('')
-  
-  // Fonction pour envoyer le prompt à l'API
-  async function getResponse() {
-    response.value = 'Chargement...'
-  
-    const prompt = `Tu es un expert en animation et en analyse sémantique.
-  Je vais te donner :
-  
-  Le titre d’un dessin animé
-  
-  Une liste de mots-clés en français
-  
-  Ta mission est de me dire pour chaque mot s’il est pertinent (lié de manière évidente ou directe au dessin animé, par son univers, ses personnages, ses thèmes, etc.).
-  Si le mot est pertinent, il rapporte 10 points, sinon 0 point.
-  Donne-moi une réponse structurée ainsi :
-  retounre moi uniquement le total de points
-  si les mots animes sont nul retourne moi "aucun mot a ete trouve"
-  
-  Voici les données :
-  Titre du dessin animé : ${randomDessin.value.nom} 
-  Mots à analyser : [ ${champ1.value}, ${champ2.value}, ${champ3.value}, ${champ4.value}]`
-  
-    try {
-      response.value = await sendPrompt(prompt)
-    } catch (e) {
-      console.error(e)
-      response.value = 'Une erreur est survenue.'
-    }
-  }
+import { ref, onMounted } from 'vue'
+import { sendPrompt } from '@/services/openai'
+import { useCartStore } from '@/stores/cart'
 
-  const cartStore = useCartStore()
+const dessinsAnimes = ref([])
+const randomDessin = ref(null)
+
+onMounted(async () => {
+  const response = await fetch('/json/cart.json')
+  const data = await response.json()
+  dessinsAnimes.value = data.dessins_animes
+  getRandomDessin()
+})
+
+function getRandomDessin() {
+  if (dessinsAnimes.value.length > 0) {
+    const index = Math.floor(Math.random() * dessinsAnimes.value.length)
+    randomDessin.value = dessinsAnimes.value[index]
+  }
+}
+
+const champ1 = ref('')
+const champ2 = ref('')
+const champ3 = ref('')
+const champ4 = ref('')
+
+const response = ref('')
+const reduction = ref(0) // Nouveau ref pour stocker la réduction numérique
+
+async function getResponse() {
+  response.value = 'Chargement...'
+
+  const prompt = `Tu es un expert en animation et en analyse sémantique.
+Je vais te donner :
+
+Le titre d’un dessin animé
+
+Une liste de mots-clés en français
+
+Ta mission est de me dire pour chaque mot s’il est pertinent (lié de manière évidente ou directe au dessin animé).
+Chaque mot pertinent donne 10 points, sinon 0.
+Retourne-moi uniquement le total de points en chiffre.
+Si aucun mot pertinent, retourne 0.
+
+Titre du dessin animé : ${randomDessin.value.nom}
+Mots à analyser : [ ${champ1.value}, ${champ2.value}, ${champ3.value}, ${champ4.value}]`
+
+  try {
+    const apiResponse = await sendPrompt(prompt)
+    reduction.value = parseInt(apiResponse) || 0
+    response.value = `${reduction.value}%`
+  } catch (e) {
+    console.error(e)
+    response.value = 'Une erreur est survenue.'
+    reduction.value = 0
+  }
+}
+
+const cartStore = useCartStore()
 
 function addToCart() {
+  const originalPrice = 29.99
+  const discount = reduction.value
+  const discountedPrice = originalPrice - (originalPrice * discount / 100)
+
   cartStore.addToCart({
     id: 1,
     custom: "Jeu Relics Of Times",
     delivery: "15/05/2025",
-    price: 29.99
+    originalPrice: originalPrice,
+    discount: discount,
+    price: discountedPrice.toFixed(2), // Prix final après réduction
+    quantity: 1
   })
-  alert("Produit ajouté au panier !")
+
+  alert(`Produit ajouté au panier avec une réduction de ${discount}% !`)
 }
 </script>
+
 <style>
   body {
     overflow-x: hidden;

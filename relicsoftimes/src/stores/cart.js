@@ -1,26 +1,21 @@
+// Exemple store/pinia cart.js
 import { defineStore } from 'pinia'
 
 export const useCartStore = defineStore('cart', {
   state: () => ({
-    items: []
+    cartItems: []
   }),
   actions: {
     addToCart(product) {
-      const existing = this.items.find(p => p.id === product.id)
-      if (existing) {
-        existing.quantity += 1
-      } else {
-        this.items.push({ ...product, quantity: 1 })
-      }
-    },
-    removeFromCart(index) {
-      this.items.splice(index, 1)
+      this.cartItems.push(product)
     },
     clearCart() {
-      this.items = []
-    },
-    getTotal() {
-      return this.items.reduce((sum, item) => sum + item.quantity * item.price, 0)
+      this.cartItems = []
+    }
+  },
+  getters: {
+    totalCartPrice(state) {
+      return state.cartItems.reduce((total, item) => total + parseFloat(item.price), 0).toFixed(2)
     }
   }
 })
