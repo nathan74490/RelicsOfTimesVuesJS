@@ -1,92 +1,47 @@
 <template>
   <div id="shoppingCart">
-    <div id="orderBackground" v-if="orderDone"></div>
-    <div id="orderDone" v-if="orderDone">
-      <img id="orderDoneBox" src="../assets/endOrder.svg" alt="Commande terminée" />
-    </div>
-
     <section id="order">
-      <h1>VOTRE COMMANDE</h1>
+      <h1>VOTRE PANIER</h1>
       <div v-if="cart.length === 0" style="text-align: center; color: white;">
         Votre panier est vide.
       </div>
-      <div v-for="(item, index) in cart" :key="item.id" id="container">
-        <div id="information">
-          <div class="info">
-            <p class="infosLabel">Info personnalisation :</p>
-            <p class="infos">{{ item.custom || "—" }}</p>
+      <div v-else>
+        <div v-for="(item, index) in cart" :key="item.id" id="container">
+          <div id="information">
+            <div class="info">
+              <p class="infosLabel">Info personnalisation :</p>
+              <p class="infos">{{ item.custom || "—" }}</p>
+            </div>
+            <div class="info">
+              <p class="infosLabel">Date de livraison :</p>
+              <p class="infos">{{ item.delivery || "—" }}</p>
+            </div>
+            <div class="info">
+              <p class="infosLabel">Quantité :</p>
+              <p class="infos">{{ item.quantity }}</p>
+            </div>
+            <div class="info">
+              <p class="infosLabel">Prix unitaire :</p>
+              <p class="infos">{{ item.originalPrice.toFixed(2) }} €</p>
+            </div>
+            <div class="info" v-if="item.discount">
+              <p class="infosLabel">Réduction :</p>
+              <p class="infos">-{{ item.discount }}%</p>
+            </div>
+            <div class="info">
+              <p class="infosLabel">Prix total :</p>
+              <p class="infos">{{ (item.price * item.quantity).toFixed(2) }} €</p>
+            </div>
+            <button @click="removeItem(index)" class="buttonPersonalise">Supprimer</button>
           </div>
-          <div class="info">
-            <p class="infosLabel">Date de livraison :</p>
-            <p class="infos">{{ item.delivery || "—" }}</p>
-          </div>
-          <div class="info">
-            <p class="infosLabel">Quantité :</p>
-            <input type="number" v-model.number="item.quantity" @input="updateTotal" min="1" max="10" required />
-          </div>
-          <div class="info">
-            <p class="infosLabel">Prix unitaire :</p>
-            <p class="infos">{{ item.originalPrice.toFixed(2) }}€</p>
-          </div>
-          <div class="info" v-if="item.discount">
-            <p class="infosLabel">Réduction :</p>
-            <p class="infos">-{{ item.discount }}%</p>
-          </div>
-          <div class="info">
-            <p class="infosLabel">Prix total :</p>
-            <p class="infos">{{ (item.price * item.quantity).toFixed(2) }}€</p>
-          </div>
-          <button @click="removeItem(index)" class="buttonPersonalise">Supprimer</button>
+          <img id="cards" src="../assets/cardsOrder.png" />
         </div>
-        <img id="cards" src="../assets/cardsOrder.png" />
-      </div>
-    </section>
-
-    <section id="cart" v-if="cart.length">
-      <h3>Mode de paiement</h3>
-      <div id="buttons">
-        <label>Carte</label>
-        <input class="radio" type="radio" value="Carte" v-model="paymentMethod" />
-        <label>Paypal</label>
-        <input class="radio" type="radio" value="Paypal" v-model="paymentMethod" />
-        <label>Visa</label>
-        <input class="radio" type="radio" value="Visa" v-model="paymentMethod" />
-      </div>
-
-      <div id="orderInfo">
-        <form id="orderForm" @submit.prevent="checkout">
-          <div id="cardInfo">
-            <label class="label">Nom :</label>
-            <input type="text" class="textInput" v-model="fullName" required />
-
-            <label class="label">Adresse :</label>
-            <input type="text" class="textInput" v-model="address" required />
-
-            <label class="label">Ville :</label>
-            <input type="text" class="textInput" v-model="city" required />
-
-            <label class="label">Code postal :</label>
-            <input type="text" class="textInput" v-model="postalCode" required />
-
-            <label class="label">Pays :</label>
-            <input type="text" class="textInput" v-model="country" required />
-
-            <label class="label">Nom du titulaire :</label>
-            <input type="text" class="textInput" v-model="cardName" required />
-
-            <label class="label">Numéro de carte :</label>
-            <input type="text" class="textInput" maxlength="16" v-model="cardNumber" required />
-
-            <label class="label">Date d'expiration (MM/AA) :</label>
-            <input type="text" class="textInput" placeholder="10/25" v-model="expirationDate" required />
-
-            <label class="label">Code de sécurité (CVV) :</label>
-            <input type="text" class="textInput" maxlength="4" v-model="cvv" required />
-          </div>
-
-          <h2>Total : {{ total }}€</h2>
-          <button type="submit" class="buttonPersonalise">Passer la commande</button>
-        </form>
+        <h2 style="text-align: center; color: white; margin-top: 4vh;">Total : {{ total }} €</h2>
+        <div style="display: flex; justify-content: center; margin-top: 3vh;">
+          <RouterLink to="/checkout">
+            <button class="buttonPersonalise">Je passe commande</button>
+          </RouterLink>
+        </div>
       </div>
     </section>
   </div>
@@ -95,205 +50,76 @@
 <script setup>
 import { ref, computed } from 'vue'
 import { useCartStore } from '@/stores/cart'
+import { RouterLink } from 'vue-router'
 
 const cartStore = useCartStore()
 const cart = cartStore.cartItems
-
-const fullName = ref('')
-const address = ref('')
-const city = ref('')
-const postalCode = ref('')
-const country = ref('')
-const cardName = ref('')
-const cardNumber = ref('')
-const expirationDate = ref('')
-const cvv = ref('')
-const paymentMethod = ref('Carte')
-const orderDone = ref(false)
 
 const total = computed(() => {
   return cart.reduce((sum, item) => sum + item.price * item.quantity, 0).toFixed(2)
 })
 
-function updateTotal() {
-  // Computed gère déjà le total
-}
-
 function removeItem(index) {
   cartStore.cartItems.splice(index, 1)
 }
-
-function checkout() {
-  if (fullName.value && address.value && city.value && postalCode.value && country.value && cardName.value && cardNumber.value && expirationDate.value && cvv.value) {
-    alert('Commande confirmée !')
-    cartStore.clearCart()
-    orderDone.value = true
-  } else {
-    alert('Veuillez remplir toutes les informations de paiement.')
-  }
-}
 </script>
 
-
-<style>
+<style scoped>
 #shoppingCart {
-    color: white;
-    background-image: url("../assets/fond_registeur.svg");
-  }
-  h1 {
-    color: white;
-    margin-top: 15vh;
-    font-family: "Relics Of Times";
-  }
-  #order {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 2vh;
-    width: 100vw;
-  }
-  #cart {
-    margin-bottom: 5vh;
-  }
-  #container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    width: 100%;
-  }
-  #cards {
-    width: 35%;
-    height: 35%;
-  }
-  #orderInfo {
-    color: #ffffff;
-    padding-right: 25vw;
-    padding-left: 25vw;
-  }
-  #cardInfo {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-  }
-  #cardNumber {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  #orderBackground {
-    display: none;
-    z-index: 998;
-    position: absolute;
-    width: 100vw;
-    height: 120vh;
-    background-color: black;
-    opacity: 0.8;
-  }
-  #orderDone {
-    display: none;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    width: 100vw;
-    height: 100vh;
-    z-index: 999;
-  }
-  #orderDoneBox {
-    width: 30vw;
-    height: 40vh;
-  }
-
-  .textInput {
-    width: 100%;
-    height: 40px;
-    background-color: transparent;
-    color: white;
-    border: 3px solid #ffffff;
-    border-radius: 8px;
-  }
-  .numberInput {
-    width: 100%;
-    height: 40px;
-    background-color: transparent;
-    color: white;
-    border: 3px solid #ffffff;
-    border-radius: 8px;
-  }
-  .cNumber {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    width: 20vw;
-  }
-  #information {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 1vh;
-    width: 30vw;
-  }
-  .infos {
-    display: flex;
-    align-items: center;
-    background-color: transparent;
-    color: white;
-    text-align: left;
-    width: 100%;
-    height: 40px;
-    font-size: 20px;
-    border-radius: 8px;
-    border: 3px solid #ffffff;
-    padding-left: 1vw;
-  }
-  .infosLabel {
-    color: #ffffff;
-  }
-  .info {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    width: 100%;
-  }
-  #buttons {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-  }
-  h3 {
-    text-align: center;
-    font-family: "Relics Of Times";
-  }
-  .radio {
-    z-index: 1;
-    height: 2vh;
-    width: 5vw;
-    background-color: #ffffff;
-    border: 3px solid #009CD4;
-    border-radius: 8px;
-  }
-  .submitOrder {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    margin-top: 2vh;
-  }
-  input, textarea {
-    padding-left: 1vh;
-  }
-
-  
-
+  color: white;
+  background-image: url("../assets/fond_registeur.svg");
+  min-height: 100vh;
+  padding: 5vh 5vw;
+}
+#order {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2vh;
+  width: 100%;
+}
+#container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 2vh;
+}
+#cards {
+  width: 35%;
+  height: 35%;
+}
+#information {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1vh;
+  width: 30vw;
+}
+.infos {
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  color: white;
+  text-align: left;
+  width: 100%;
+  height: 40px;
+  font-size: 20px;
+  border-radius: 8px;
+  border: 3px solid #ffffff;
+  padding-left: 1vw;
+}
+.infosLabel {
+  color: #ffffff;
+}
+.info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+}
 </style>

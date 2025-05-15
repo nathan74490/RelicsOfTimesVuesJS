@@ -110,6 +110,16 @@ const router = createRouter({
       name: 'endGame',
       component: () => import('../views/endGame.vue'),
     },
+    {
+      path: '/checkout',
+      name: 'Checkout',
+      component: () => import('../views/Checkout.vue'),
+    },
+    {
+      path: '/commande-validee',
+      name: 'OrderSuccess',
+      component: () => import('../views/OrderSuccess.vue'),
+    },
   ],
 })
 
