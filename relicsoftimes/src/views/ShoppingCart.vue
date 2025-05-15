@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="shoppingCart">
     <div id="orderBackground" v-if="orderDone"></div>
     <div id="orderDone" v-if="orderDone">
       <img id="orderDoneBox" src="../assets/endOrder.svg" alt="Commande terminée" />
@@ -56,13 +56,34 @@
       <div id="orderInfo">
         <form id="orderForm" @submit.prevent="checkout">
           <div id="cardInfo">
+            <label class="label">Nom :</label>
+            <input type="text" class="textInput" v-model="fullName" required />
+
             <label class="label">Adresse :</label>
             <input type="text" class="textInput" v-model="address" required />
+
+            <label class="label">Ville :</label>
+            <input type="text" class="textInput" v-model="city" required />
+
+            <label class="label">Code postal :</label>
+            <input type="text" class="textInput" v-model="postalCode" required />
+
+            <label class="label">Pays :</label>
+            <input type="text" class="textInput" v-model="country" required />
+
             <label class="label">Nom du titulaire :</label>
             <input type="text" class="textInput" v-model="cardName" required />
+
             <label class="label">Numéro de carte :</label>
             <input type="text" class="textInput" maxlength="16" v-model="cardNumber" required />
+
+            <label class="label">Date d'expiration (MM/AA) :</label>
+            <input type="text" class="textInput" placeholder="10/25" v-model="expirationDate" required />
+
+            <label class="label">Code de sécurité (CVV) :</label>
+            <input type="text" class="textInput" maxlength="4" v-model="cvv" required />
           </div>
+
           <h2>Total : {{ total }}€</h2>
           <button type="submit" class="buttonPersonalise">Passer la commande</button>
         </form>
@@ -77,9 +98,16 @@ import { useCartStore } from '@/stores/cart'
 
 const cartStore = useCartStore()
 const cart = cartStore.cartItems
+
+const fullName = ref('')
 const address = ref('')
+const city = ref('')
+const postalCode = ref('')
+const country = ref('')
 const cardName = ref('')
 const cardNumber = ref('')
+const expirationDate = ref('')
+const cvv = ref('')
 const paymentMethod = ref('Carte')
 const orderDone = ref(false)
 
@@ -88,7 +116,7 @@ const total = computed(() => {
 })
 
 function updateTotal() {
-  // computed gère déjà le total automatiquement
+  // Computed gère déjà le total
 }
 
 function removeItem(index) {
@@ -96,7 +124,7 @@ function removeItem(index) {
 }
 
 function checkout() {
-  if (address.value && cardName.value && cardNumber.value) {
+  if (fullName.value && address.value && city.value && postalCode.value && country.value && cardName.value && cardNumber.value && expirationDate.value && cvv.value) {
     alert('Commande confirmée !')
     cartStore.clearCart()
     orderDone.value = true
@@ -106,8 +134,9 @@ function checkout() {
 }
 </script>
 
+
 <style>
-body {
+#shoppingCart {
     color: white;
     background-image: url("../assets/fond_registeur.svg");
   }
@@ -130,7 +159,7 @@ body {
   #container {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     width: 100%;
   }

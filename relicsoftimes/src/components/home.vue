@@ -51,7 +51,7 @@ function addToCart(product) {
         <p class="textDesc">L’objectif de ce projet est de raviver chez les joueurs leurs plus beaux souvenirs
           d’enfance.</p>
       </div>
-      <RouterLink class="buttonPersonalise" style="width: 55%;" to="#">Personnaliser</RouterLink>
+      <RouterLink class="buttonPersonalise" style="width: 55%;" to="/Personnaliser">Personnaliser</RouterLink>
     </div>
   </section>
   <section id="about">
