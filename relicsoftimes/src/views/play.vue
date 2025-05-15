@@ -28,15 +28,17 @@
       </div>
   
   
-      <div id="popup" v-if="response"><div  id="popuprespons">-{{ response }}%</div> </div>
+      <div id="popup" v-if="response"><img id="popuprespons" src="../assets/gamePromo.png" alt=""><div  id="textepopuprespons">- {{ response }}%</div> <button class="buttonPersonalise" style="width: 15vw; z-index: 110; margin-top: 50vh;" @click="addToCart">
+          Ajouter au panier
+        </button></div>
   
     </div>
   </template>
   
-  <script setup>
+<script setup>
   import { ref, onMounted } from 'vue'
   import { sendPrompt } from '@/services/openai'
-  
+  import { useCartStore } from '@/stores/cart' // importe ton store
   const dessinsAnimes = ref([])
   const randomDessin = ref(null)
   
@@ -92,8 +94,20 @@
       response.value = 'Une erreur est survenue.'
     }
   }
-  </script>
-  <style>
+
+  const cartStore = useCartStore()
+
+function addToCart() {
+  cartStore.addToCart({
+    id: 1,
+    custom: "Jeu Relics Of Times",
+    delivery: "15/05/2025",
+    price: 29.99
+  })
+  alert("Produit ajouté au panier !")
+}
+</script>
+<style>
   body {
     overflow-x: hidden;
   }
@@ -196,18 +210,22 @@
     align-items: center;
     
   }
-  #popuprespons{
+  #textepopuprespons{
     position: absolute;;
-    width: 616px;
+    width: 615px;
     height: 494px;
-    z-index: 100;
-    background-image: url(../assets/gamePromo.png);
-    background-size:contain ;
+    z-index: 110;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #fff;
-    
+    color: #009CD4;
+    font-size: 40px;
+  }
+  #popuprespons{
+    position: absolute;;
+    width: 615px;
+    height: auto;
+    z-index: 100;    
   }
   
   </style>
