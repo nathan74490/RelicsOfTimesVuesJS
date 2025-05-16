@@ -2,20 +2,26 @@
   <div id="successPage">
     <div class="popup">
       <h1 style="color: white;">MERCI POUR<br />VOTRE COMMANDE</h1>
+      <p class="countdown">Redirection dans {{ countdown }} secondes...</p>
     </div>
   </div>
 </template>
 
 <script setup>
-import { onMounted } from 'vue'
+import { ref, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
 
 const router = useRouter()
+const countdown = ref(5)
 
 onMounted(() => {
-  setTimeout(() => {
-    router.push('/')
-  }, 5000) // redirection après 5 secondes
+  const interval = setInterval(() => {
+    countdown.value--
+    if (countdown.value === 0) {
+      clearInterval(interval)
+      router.push('/')
+    }
+  }, 1000)
 })
 </script>
 
@@ -38,6 +44,11 @@ onMounted(() => {
   font-size: 3vw;
   background-color: rgba(0, 0, 0, 0.85);
   box-shadow: 0 0 40px white;
-  color: white;
+}
+
+.countdown {
+  font-size: 1.5vw;
+  margin-top: 2vh;
+  color: #ccc;
 }
 </style>
