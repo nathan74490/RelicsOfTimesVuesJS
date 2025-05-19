@@ -1,4 +1,9 @@
 <template>
+  <div id="rules">
+    <h1 id="textpopupdebut">Cliquer pour commencer</h1>
+    <img id="ruleImg" src="../assets/ruleCard.svg">
+    <div id="shadow"></div>
+  </div>
     <img id="background" src="../assets/fondJeux.svg" alt="">
     <div class="container">
       <div>
@@ -113,6 +118,19 @@ function addToCart() {
 
   alert(`Produit ajouté au panier avec une réduction de ${discount}% !`)
 }
+
+onMounted(() => {
+  const body = document.querySelector('body');
+  body.style.overflow = 'hidden'
+  const rules = document.querySelector('#rules');
+  if (rules) {
+    rules.addEventListener('click', () => {
+      rules.style.display = 'none';
+      body.style.overflow = 'auto'
+    });
+  }
+});
+
 </script>
 
 <style>
@@ -235,5 +253,32 @@ function addToCart() {
     height: auto;
     z-index: 100;    
   }
-  
+  #rules {
+    display: flex;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+  }
+  #shadow {
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 100%;
+    height: 100%;
+  }
+  #ruleImg {
+    z-index: 999;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    height: 90%;
+    width: 50%;
+  }
+  #textpopupdebut {
+    z-index: 999;
+    position: absolute;
+    text-align: center;
+    color: white;
+    top: 42%;
+    right: 15%;
+    font-size: 50px;
+  }
   </style>
