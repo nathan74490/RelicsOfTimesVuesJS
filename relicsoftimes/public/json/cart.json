@@ -1,43 +1,8 @@
 {
     "dessins_animes": [
       {
-        "nom": "les bronzes font du ski",
-        "image": "/src/assets/CarteJeux/LES BRONZES 1.svg"
-      },
-      {
-        "nom": "Arthur et les Minimoys",
-        "image": "/src/assets/CarteJeux/ARTHUR 1.svg"
-      },{
-        "nom": "Avatar",
-        "image": "/src/assets/CarteJeux/AVATAR 1.svg"
-      },
-      {
-        "nom": "Retour vers le futur",
-        "image": "/src/assets/CarteJeux/BACK TO THE FUTUR 1.svg"
-      },{
-        "nom": "E.T.",
-        "image": "/src/assets/CarteJeux/E.T 1.svg"
-      },
-      {
-        "nom": "Fast and furious",
-        "image": "/src/assets/CarteJeux/F AND F 1.svg"
-      },{
-        "nom": "Forest Gump",
-        "image": "/src/assets/CarteJeux/FOREST GUMP 1.svg"
-      },
-      {
-        "nom": "Gladiator",
-        "image": "/src/assets/CarteJeux/GLADIATOR 1.svg"
-      },{
         "nom": "Harry Potter",
         "image": "/src/assets/CarteJeux/HARRY POTTER 1.svg"
-      },
-      {
-        "nom": "Arthur et les Minimoys",
-        "image": "/src/assets/CarteJeux/ARTHUR 1.svg"
-      },{
-        "nom": "Titanic",
-        "image": "/src/assets/CarteJeux/TITANIC 1.svg"
       }
     ]
   }

@@ -9,12 +9,12 @@
 </template>
 
 <script setup>
-import img1 from '@/assets/photodesgolmont.png'
-import img2 from '@/assets/photodesgolmont2.png'
-import img3 from '@/assets/gamePromo.png'
-import img4 from '@/assets/cards1.png'
-import img5 from '@/assets/cards2.png'
-import img6 from '@/assets/cards3.png'
+import img1 from '@/assets/imagecarou1.jpg'
+import img2 from '@/assets/IMG-20250521-WA0001.png'
+import img3 from '@/assets/IMG-20250521-WA0007.png'
+import img4 from '@/assets/IMG-20250521-WA0005.png'
+import img5 from '@/assets/IMG-20250521-WA0009.png'
+import img6 from '@/assets/IMG-20250521-WA0008.png'
 
 const slides = [
   { src: img1, alt: 'Image 1' },

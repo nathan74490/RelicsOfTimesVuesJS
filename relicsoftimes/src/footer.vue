@@ -13,7 +13,7 @@
                 </div>
                 
             </div>
-            <p>&copy; 2023 Relics of Times. Tous droits réservés.</p>
+            <p>&copy; 2025 Relics of Times. Tous droits réservés.</p>
             <div class="footer-links">
                     <!-- <a href="#">Mentions légales</a> -->
                 <a href="#"><img src="./assets/logoinsta.svg" alt=""></a>

@@ -102,6 +102,7 @@ function addToCart(product) {
   font-family: "Relics Of Times";
   font-size: 5vw;
   color: #fff;
+  margin: 0;
 }
 
 #divDesc {

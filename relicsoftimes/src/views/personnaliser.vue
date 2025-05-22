@@ -42,7 +42,7 @@ const selectedColor = ref(null)
 const selectedLogo = ref(defaultLogo)
 
 const colors = [
-  '#FF5733', '#A3CB38', '#3357FF', '#F1C40F', '#9B59B6',
+  '#FF5733', '#f5407b', '#3357FF', '#F1C40F', '#9B59B6',
   '#1ABC9C', '#E67E22', '#6AB04C', '#E74C3C', '#3498DB',
   '#F39C12', '#8E44AD', '#16A085', '#D35400', '#27AE60', '#2980B9'
 ]

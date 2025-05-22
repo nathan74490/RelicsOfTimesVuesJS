@@ -2,7 +2,7 @@
   <div class="carousel-container">
     <input
       type="file"
-      accept=".svg,.png,.jpg,.jpeg"
+      accept="image/*"
       ref="fileInput"
       style="display: none"
       @change="handleFileChange"
@@ -57,7 +57,7 @@ function triggerFileInput() {
 
 function handleFileChange(event) {
   const file = event.target.files[0]
-  if (file && file.type === 'image/svg+xml') {
+  if (file && file.type.startsWith('image/')) {
     const reader = new FileReader()
     reader.onload = () => {
       imagesInternal.value.push(reader.result)
