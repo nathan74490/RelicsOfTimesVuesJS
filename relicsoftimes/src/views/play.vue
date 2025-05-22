@@ -33,7 +33,11 @@
       </div>
   
   
-      <div id="popup" v-if="response"><img id="popuprespons" src="../assets/gamePromo.png" alt=""><div  id="textepopuprespons">- {{ response }}</div> <button class="buttonPersonalise" style="width: 15vw; z-index: 110; margin-top: 50vh;" @click="addToCart">
+      <div id="popup" v-if="response">
+        <p id="textWin">Vous avez gagner une réduction de :</p>
+        <img id="popuprespons" src="../assets/gamePromo.png" alt="">
+        <div  id="textepopuprespons">- {{ response }}</div>
+        <button class="buttonPersonalise" style="width: 15vw; z-index: 110; margin-top: 50vh;" @click="addToCart">
           Ajouter au panier
         </button></div>
   
@@ -273,6 +277,11 @@ onMounted(() => {
     position: absolute;
     height: 90%;
     width: 50%;
+  }
+  #textWin {
+    color: white;
+    position: absolute;
+    top: 20vh;
   }
   #textpopupdebut {
     z-index: 999;
