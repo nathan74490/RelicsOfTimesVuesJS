@@ -68,7 +68,7 @@ function addToCart(discount = 0) {
 
   cartStore.addToCart({
     id: Date.now(),
-    custom: `Carte personnalisée - Couleur: ${selectedColor.value}, Logo: ${selectedLogo.value}`,
+    custom: `Carte personnalisée`,
     delivery: "20/05/2025",
     originalPrice: originalPrice,
     discount: discount,
