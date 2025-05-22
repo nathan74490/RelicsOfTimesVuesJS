@@ -5,7 +5,7 @@
                 <div class="footer-contact">
                     <h3>Contact:</h3>
                     <a href="tel:+33772203515">
-                        <p>0772203515</p>
+                        <p>0672301535</p>
                     </a>
                     <a href="mailto:relicsoftimes@gmail.com">
                         <p>relicsoftimes@gmail.com</p>

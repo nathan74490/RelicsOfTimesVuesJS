@@ -22,10 +22,10 @@
         <div class="formulaire">
           <h3 id="formulaire-title">Mots clées</h3>
           <div class="formulaire-champs">
-            <input v-model="champ1" class="champ-texte" placeholder="Pose une question..." />
-            <input v-model="champ2" class="champ-texte" placeholder="Pose une question..." />
-            <input v-model="champ3" class="champ-texte" placeholder="Pose une question..." />
-            <input v-model="champ4" class="champ-texte" placeholder="Pose une question..." />
+            <input v-model="champ1" class="champ-texte" placeholder="mots clés..." />
+            <input v-model="champ2" class="champ-texte" placeholder="mots clés..." />
+            <input v-model="champ3" class="champ-texte" placeholder="mots clés..." />
+            <input v-model="champ4" class="champ-texte" placeholder="mots clés..." />
           </div>
           <!-- <button @click="getRandomDessin">Nouveau dessin aléatoire</button> -->
           <button class="buttonPersonalise" style="width: 20%;" @click="getResponse">Confirmer</button>
@@ -44,6 +44,8 @@
 import { ref, onMounted } from 'vue'
 import { sendPrompt } from '@/services/openai'
 import { useCartStore } from '@/stores/cart'
+import { useRouter } from 'vue-router'
+const router = useRouter()
 
 const dessinsAnimes = ref([])
 const randomDessin = ref(null)
@@ -116,7 +118,7 @@ function addToCart() {
     quantity: 1
   })
 
-  alert(`Produit ajouté au panier avec une réduction de ${discount}% !`)
+  router.push('/shoppingcart')
 }
 
 onMounted(() => {

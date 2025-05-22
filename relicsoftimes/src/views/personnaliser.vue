@@ -33,6 +33,8 @@ import ScrollCarousel from '../components/ScrollCarousel.vue'
 import VerticalLogoCarousel from '../components/VerticalLogoCarousel.vue'
 import { useCartStore } from '@/stores/cart'
 import defaultLogo from '@/assets/logos/logo_default.png'
+import { useRouter } from 'vue-router'
+const router = useRouter()
 
 const cartStore = useCartStore()
 const activeCarousel = ref('')
@@ -74,7 +76,7 @@ function addToCart(discount = 0) {
     quantity: 1
   })
 
-  alert(`Produit ajouté au panier${discount ? ` avec une réduction de ${discount}%` : ''} !`)
+  router.push('/shoppingcart')
 }
 </script>
 

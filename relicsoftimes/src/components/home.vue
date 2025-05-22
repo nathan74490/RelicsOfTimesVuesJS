@@ -2,6 +2,8 @@
 import { RouterLink } from 'vue-router'
 import { useCartStore } from '@/stores/cart' // importe ton store
 import SlideSplide from '@/components/SlideSplide.vue';
+import { useRouter } from 'vue-router'
+const router = useRouter()
 const cartStore = useCartStore()
 
 function addToCart(product) {
@@ -19,7 +21,7 @@ function addToCart(product) {
     price: finalPrice.toFixed(2)
   })
 
-  alert(`Produit ajouté au panier${discount ? ` avec une réduction de ${discount}%` : ''}!`)
+   router.push('/shoppingcart')
 }
 </script>
 
